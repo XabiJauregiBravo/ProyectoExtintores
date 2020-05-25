@@ -4,7 +4,7 @@ Module CrearBD
 
     Public StringBaseDatos As String = "
 
-            CREATE TABLE ALMACENES (
+CREATE TABLE ALMACENES (
             IDALMACEN varchar(10) NOT NULL PRIMARY KEY,
             DIRECCION varchar(20) NOT NULL,
             CIUDAD varchar(20) NOT NULL
@@ -29,14 +29,14 @@ Module CrearBD
             CREATE TABLE PRODUCTOS (
             IDPRODUCTO varchar(10) NOT NULL PRIMARY KEY,
             DESCRIPCION varchar(40) NOT NULL,
-            IDPROVEEDOR varchar(10) NOT NULL REFERENCES PROVEEDORES (IDPROVEEDOR)
-            IDALMACEN varchar(10) NOT NULL REFERENCES ALMACENES (IDALMACEN)
+            IDPROVEEDOR varchar(10) NOT NULL REFERENCES PROVEEDORES (IDPROVEEDOR),
+			IDALMACEN varchar(10) NOT NULL REFERENCES ALMACENES (IDALMACEN)
             );
 
             INSERT INTO PRODUCTOS(IDPRODUCTO,DESCRIPCION,IDPROVEEDOR,IDALMACEN) 
             VALUES
             ('EXTPOLVO','Extintor de Polvo','PRO001','ALM001'),
-            ('EXTCO2','Extintor de Co2','PRO002','ALM001');
+            ('EXTCO2','Extintor de Co2','PRO002','ALM002');
 
             CREATE TABLE REVISORES(
             IDREVISOR varchar(10) NOT NULL PRIMARY KEY,
@@ -82,7 +82,7 @@ Module CrearBD
             );
 
             INSERT INTO LINEASPEDIDOS(IDLINEAS,CANTIDAD,PRECIOUNIDAD,IDPEDIDO,IDPRODUCTO) VALUES
-            ('LIN001',30,6,'PED001','EXTPOL'),
+            ('LIN001',30,6,'PED001','EXTPOLVO'),
             ('LIN002',23,6,'PED002','EXTCO2');"
 
     Public ConexionString As String = "Data Source=C:\database\ProyectoBBDDExtintores.db;Version=3"
