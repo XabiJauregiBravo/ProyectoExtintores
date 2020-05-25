@@ -138,6 +138,7 @@ Partial Class FormAñadirClientes
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(297, 339)
         Me.Name = "FormAñadirClientes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Añadir Clientes"
         Me.ResumeLayout(False)
         Me.PerformLayout()

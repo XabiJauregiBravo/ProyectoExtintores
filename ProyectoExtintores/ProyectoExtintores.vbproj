@@ -111,6 +111,12 @@
     <Compile Include="FormAñadirClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormAñadirLineaPedido.Designer.vb">
+      <DependentUpon>FormAñadirLineaPedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAñadirLineaPedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormAñadirProducto.Designer.vb">
       <DependentUpon>FormAñadirProducto.vb</DependentUpon>
     </Compile>
@@ -153,6 +159,12 @@
     <Compile Include="FormEditarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormEditarLinea.Designer.vb">
+      <DependentUpon>FormEditarLinea.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarLinea.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormEditarProducto.Designer.vb">
       <DependentUpon>FormEditarProducto.vb</DependentUpon>
     </Compile>
@@ -177,6 +189,12 @@
     <Compile Include="FormEditarRevisor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormGestionPedidos.Designer.vb">
+      <DependentUpon>FormGestionPedidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormGestionPedidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormInicial.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +206,12 @@
       <DependentUpon>FormInventarioProductos.vb</DependentUpon>
     </Compile>
     <Compile Include="FormInventarioProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLineas.Designer.vb">
+      <DependentUpon>FormLineas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormLineas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMenuPrincipal.Designer.vb">
@@ -240,6 +264,9 @@
     <EmbeddedResource Include="FormAñadirClientes.resx">
       <DependentUpon>FormAñadirClientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAñadirLineaPedido.resx">
+      <DependentUpon>FormAñadirLineaPedido.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAñadirProducto.resx">
       <DependentUpon>FormAñadirProducto.vb</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +288,9 @@
     <EmbeddedResource Include="FormEditarCliente.resx">
       <DependentUpon>FormEditarCliente.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarLinea.resx">
+      <DependentUpon>FormEditarLinea.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditarProducto.resx">
       <DependentUpon>FormEditarProducto.vb</DependentUpon>
     </EmbeddedResource>
@@ -273,11 +303,17 @@
     <EmbeddedResource Include="FormEditarRevisor.resx">
       <DependentUpon>FormEditarRevisor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionPedidos.resx">
+      <DependentUpon>FormGestionPedidos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInicial.resx">
       <DependentUpon>FormInicial.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInventarioProductos.resx">
       <DependentUpon>FormInventarioProductos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLineas.resx">
+      <DependentUpon>FormLineas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.vb</DependentUpon>

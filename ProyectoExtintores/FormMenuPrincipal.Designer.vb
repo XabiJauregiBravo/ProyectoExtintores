@@ -107,7 +107,7 @@ Partial Class FormMenuPrincipal
         Me.botonFacturas.Name = "botonFacturas"
         Me.botonFacturas.Size = New System.Drawing.Size(237, 175)
         Me.botonFacturas.TabIndex = 5
-        Me.botonFacturas.Text = "Pedidos"
+        Me.botonFacturas.Text = "Facturación"
         Me.botonFacturas.UseVisualStyleBackColor = False
         '
         'LabelMenuPrincipal

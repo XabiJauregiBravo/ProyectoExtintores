@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FormPedidos
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class FormLineas
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,19 +20,19 @@ Partial Class FormPedidos
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPedidos))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLineas))
         Me.botonEliminar = New System.Windows.Forms.Button()
         Me.botonEditar = New System.Windows.Forms.Button()
         Me.botonAñadir = New System.Windows.Forms.Button()
         Me.botonVerDatos = New System.Windows.Forms.Button()
-        Me.TablaPedidosxLineas = New System.Windows.Forms.DataGridView()
-        CType(Me.TablaPedidosxLineas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TablaLineas = New System.Windows.Forms.DataGridView()
+        CType(Me.TablaLineas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'botonEliminar
@@ -43,11 +43,11 @@ Partial Class FormPedidos
         Me.botonEliminar.ForeColor = System.Drawing.Color.White
         Me.botonEliminar.Image = Global.ProyectoExtintores.My.Resources.Resources.iconoeliminar
         Me.botonEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.botonEliminar.Location = New System.Drawing.Point(727, 403)
+        Me.botonEliminar.Location = New System.Drawing.Point(731, 401)
         Me.botonEliminar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.botonEliminar.Name = "botonEliminar"
         Me.botonEliminar.Size = New System.Drawing.Size(167, 77)
-        Me.botonEliminar.TabIndex = 18
+        Me.botonEliminar.TabIndex = 23
         Me.botonEliminar.Text = "Eliminar"
         Me.botonEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.botonEliminar.UseVisualStyleBackColor = False
@@ -60,11 +60,11 @@ Partial Class FormPedidos
         Me.botonEditar.ForeColor = System.Drawing.Color.White
         Me.botonEditar.Image = Global.ProyectoExtintores.My.Resources.Resources.iconoeditar
         Me.botonEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.botonEditar.Location = New System.Drawing.Point(727, 275)
+        Me.botonEditar.Location = New System.Drawing.Point(731, 273)
         Me.botonEditar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.botonEditar.Name = "botonEditar"
         Me.botonEditar.Size = New System.Drawing.Size(167, 77)
-        Me.botonEditar.TabIndex = 17
+        Me.botonEditar.TabIndex = 22
         Me.botonEditar.Text = "Editar"
         Me.botonEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.botonEditar.UseVisualStyleBackColor = False
@@ -77,11 +77,11 @@ Partial Class FormPedidos
         Me.botonAñadir.ForeColor = System.Drawing.Color.White
         Me.botonAñadir.Image = Global.ProyectoExtintores.My.Resources.Resources.iconoañadir
         Me.botonAñadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.botonAñadir.Location = New System.Drawing.Point(727, 156)
+        Me.botonAñadir.Location = New System.Drawing.Point(731, 154)
         Me.botonAñadir.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.botonAñadir.Name = "botonAñadir"
         Me.botonAñadir.Size = New System.Drawing.Size(167, 77)
-        Me.botonAñadir.TabIndex = 16
+        Me.botonAñadir.TabIndex = 21
         Me.botonAñadir.Text = "Añadir"
         Me.botonAñadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.botonAñadir.UseVisualStyleBackColor = False
@@ -94,20 +94,20 @@ Partial Class FormPedidos
         Me.botonVerDatos.ForeColor = System.Drawing.Color.White
         Me.botonVerDatos.Image = Global.ProyectoExtintores.My.Resources.Resources.actualizaricono
         Me.botonVerDatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.botonVerDatos.Location = New System.Drawing.Point(727, 32)
+        Me.botonVerDatos.Location = New System.Drawing.Point(731, 30)
         Me.botonVerDatos.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.botonVerDatos.Name = "botonVerDatos"
         Me.botonVerDatos.Size = New System.Drawing.Size(167, 77)
-        Me.botonVerDatos.TabIndex = 15
+        Me.botonVerDatos.TabIndex = 20
         Me.botonVerDatos.Text = "Actualizar Datos"
         Me.botonVerDatos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.botonVerDatos.UseVisualStyleBackColor = False
         '
-        'TablaPedidosxLineas
+        'TablaLineas
         '
-        Me.TablaPedidosxLineas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.TablaPedidosxLineas.BackgroundColor = System.Drawing.Color.White
-        Me.TablaPedidosxLineas.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TablaLineas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.TablaLineas.BackgroundColor = System.Drawing.Color.White
+        Me.TablaLineas.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -115,9 +115,9 @@ Partial Class FormPedidos
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.TablaPedidosxLineas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.TablaPedidosxLineas.ColumnHeadersHeight = 60
-        Me.TablaPedidosxLineas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.TablaLineas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.TablaLineas.ColumnHeadersHeight = 60
+        Me.TablaLineas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -125,10 +125,10 @@ Partial Class FormPedidos
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.TablaPedidosxLineas.DefaultCellStyle = DataGridViewCellStyle2
-        Me.TablaPedidosxLineas.Location = New System.Drawing.Point(-5, 0)
-        Me.TablaPedidosxLineas.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TablaPedidosxLineas.Name = "TablaPedidosxLineas"
+        Me.TablaLineas.DefaultCellStyle = DataGridViewCellStyle2
+        Me.TablaLineas.Location = New System.Drawing.Point(-1, -2)
+        Me.TablaLineas.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TablaLineas.Name = "TablaLineas"
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -136,23 +136,23 @@ Partial Class FormPedidos
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.TablaPedidosxLineas.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.TablaLineas.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightGray
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        Me.TablaPedidosxLineas.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.TablaPedidosxLineas.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White
-        Me.TablaPedidosxLineas.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TablaPedidosxLineas.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
-        Me.TablaPedidosxLineas.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.TablaPedidosxLineas.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black
-        Me.TablaPedidosxLineas.RowTemplate.Height = 30
-        Me.TablaPedidosxLineas.Size = New System.Drawing.Size(677, 509)
-        Me.TablaPedidosxLineas.TabIndex = 14
+        Me.TablaLineas.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.TablaLineas.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White
+        Me.TablaLineas.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TablaLineas.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
+        Me.TablaLineas.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.TablaLineas.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black
+        Me.TablaLineas.RowTemplate.Height = 30
+        Me.TablaLineas.Size = New System.Drawing.Size(677, 509)
+        Me.TablaLineas.TabIndex = 19
         '
-        'FormPedidos
+        'FormLineas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -162,16 +162,14 @@ Partial Class FormPedidos
         Me.Controls.Add(Me.botonEditar)
         Me.Controls.Add(Me.botonAñadir)
         Me.Controls.Add(Me.botonVerDatos)
-        Me.Controls.Add(Me.TablaPedidosxLineas)
+        Me.Controls.Add(Me.TablaLineas)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(977, 547)
-        Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(977, 547)
-        Me.Name = "FormPedidos"
+        Me.Name = "FormLineas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Gestion Pedidos"
-        CType(Me.TablaPedidosxLineas, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "Productos Pedidos"
+        CType(Me.TablaLineas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -180,5 +178,5 @@ Partial Class FormPedidos
     Friend WithEvents botonEditar As Button
     Friend WithEvents botonAñadir As Button
     Friend WithEvents botonVerDatos As Button
-    Friend WithEvents TablaPedidosxLineas As DataGridView
+    Friend WithEvents TablaLineas As DataGridView
 End Class

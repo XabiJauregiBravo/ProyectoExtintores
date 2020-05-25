@@ -240,8 +240,7 @@ Public Module ControladorDatos
         Dim Comando As New SQLiteCommand
         Comando.Connection = MiConexion
         Comando.CommandText = "SELECT PEDIDOS.IDPEDIDO, PEDIDOS.FECHA, PEDIDOS.DIRECCION,
-                                PEDIDOS.IDREVISOR, PEDIDOS.IDCLIENTE, LINEASPEDIDOS.CANTIDAD,LINEASPEDIDOS.PRECIOUNIDAD,
-                                LINEASPEDIDOS.IDPRODUCTO,LINEASPEDIDOS.PRECIOUNIDAD*LINEASPEDIDOS.CANTIDAD AS TOTAL FROM PEDIDOS 
+                                PEDIDOS.IDREVISOR, PEDIDOS.IDCLIENTE,LINEASPEDIDOS.PRECIOUNIDAD*LINEASPEDIDOS.CANTIDAD AS TOTAL FROM PEDIDOS 
                                 INNER JOIN  LINEASPEDIDOS ON  LINEASPEDIDOS.IDPEDIDO = PEDIDOS.IDPEDIDO;"
         Dim datareader As SQLiteDataReader
         Try
@@ -262,6 +261,34 @@ Public Module ControladorDatos
         End Try
     End Function
 
+    Public Function VerTablaPedidos()
+        Dim MiConexion = Conexion()
+        Try
+            MiConexion.Open()
+        Catch ex As SQLiteException
+            MsgBox("La base de datos no es valida o no existe", MsgBoxStyle.Exclamation)
+            Return False
+        End Try
+        Dim Comando As New SQLiteCommand
+        Comando.Connection = MiConexion
+        Comando.CommandText = "SELECT * FROM PEDIDOS"
+        Dim datareader As SQLiteDataReader
+        Try
+            datareader = Comando.ExecuteReader()
+            Dim datatable As New DataTable
+            Try
+                datatable.Load(datareader)
+            Catch ex As System.FormatException
+                MsgBox("Los valores incorrectos", MsgBoxStyle.Exclamation)
+            End Try
+            datareader.Close()
+            MiConexion.Close()
+            Return datatable
+        Catch ex As SQLiteException
+            MsgBox("El nombre de tabla incorrecto", MsgBoxStyle.Exclamation)
+        End Try
+    End Function
+
     Public Sub DeletePedido(IDPEDIDO As String)
         Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
             Dim DeletePedidoQuery As String = "DELETE FROM LINEASPEDIDOS WHERE IDPEDIDO = @IDPEDIDO;
@@ -274,41 +301,73 @@ Public Module ControladorDatos
 
         End Using
     End Sub
-    Public Sub UpdatePedido(IDPEDIDO As String, DIRECCION As String, IDREVISOR As String, IDCLIENTE As String, CANTIDAD As Integer, PRECIOUNIDAD As Integer, IDPRODUCTO As String)
+    Public Sub UpdatePedido(IDPEDIDO As String, DIRECCION As String, IDREVISOR As String, IDCLIENTE As String)
         Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
-            Dim UpdatePedidoQuery As String = "UPDATE PEDIDOS SET IDPEDIDO = @IDPEDIDO, DIRECCION = @DIRECCION,IDREVISOR = @IDREVISOR WHERE IDPEDIDO = @IDPEDIDO;
-                                                UPDATE LINEASPEDIDOS SET CANTIDAD = @CANTIDAD,PRECIOUNIDAD = @PRECIOUNIDAD,IDPEDIDO = @IDPEDIDO,IDPRODUCTO = @IDPRODUCTO WHERE IDPEDIDO = @IDPEDIDO"
+            Dim UpdatePedidoQuery As String = "UPDATE PEDIDOS SET IDPEDIDO = @IDPEDIDO, DIRECCION = @DIRECCION,IDREVISOR = @IDREVISOR WHERE IDPEDIDO = @IDPEDIDO; "
             Dim Command As New SQLiteCommand(UpdatePedidoQuery, MiConexion)
             Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
             Command.Parameters.AddWithValue("@DIRECCION", DIRECCION)
             Command.Parameters.AddWithValue("@IDREVISOR", IDREVISOR)
             Command.Parameters.AddWithValue("@IDCLIENTE", IDCLIENTE)
-            Command.Parameters.AddWithValue("@CANTIDAD", CANTIDAD)
-            Command.Parameters.AddWithValue("@PRECIOUNIDAD", PRECIOUNIDAD)
-            Command.Parameters.AddWithValue("@IDPRODUCTO", IDPRODUCTO)
+            MiConexion.Open()
+            Command.ExecuteNonQuery()
+
+        End Using
+    End Sub
+
+    Public Sub InsertPedido(IDPEDIDO As String, DIRECCION As String, IDREVISOR As String, IDCLIENTE As String)
+        Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
+            Dim FECHAACTUAL As String = DateTime.Now.ToShortDateString()
+            Dim InsertPedidoQuery As String = "INSERT INTO PEDIDOS(IDPEDIDO,FECHA,DIRECCION,IDREVISOR,IDCLIENTE) VALUES(@IDPEDIDO,'" & FECHAACTUAL & "',@DIRECCION,@IDREVISOR,@IDCLIENTE); "
+            Dim Command As New SQLiteCommand(InsertPedidoQuery, MiConexion)
+            Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
+            Command.Parameters.AddWithValue("@DIRECCION", DIRECCION)
+            Command.Parameters.AddWithValue("@IDREVISOR", IDREVISOR)
+            Command.Parameters.AddWithValue("@IDCLIENTE", IDCLIENTE)
+            MiConexion.Open()
+            Command.ExecuteNonQuery()
+
+        End Using
+    End Sub
+
+    Public Sub DeleteLinea(IDLINEAS As String)
+        Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
+            Dim DeletePedidoQuery As String = "DELETE FROM LINEASPEDIDOS WHERE IDLINEAS = @IDLINEAS;"
+            Dim Command As New SQLiteCommand(DeletePedidoQuery, MiConexion)
+            Command.Parameters.AddWithValue("@IDLINEAS", IDLINEAS)
             MiConexion.Open()
             Command.ExecuteNonQuery()
 
 
         End Using
     End Sub
-
-    Public Sub InsertPedido(IDPEDIDO As String, DIRECCION As String, IDREVISOR As String, IDCLIENTE As String, CANTIDAD As Integer, PRECIOUNIDAD As Integer, IDPRODUCTO As String)
+    Public Sub UpdateLinea(IDLINEAS As String, CANTIDAD As Integer, PRECIOUNIDAD As Integer, IDPEDIDO As String, IDPRODUCTO As String)
         Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
-            Dim FECHAACTUAL As String = DateTime.Now.ToShortDateString()
-            Dim InsertPedidoQuery As String = "INSERT INTO PEDIDOS(IDPEDIDO,FECHA,DIRECCION,IDREVISOR,IDCLIENTE) VALUES(@IDPEDIDO,'" & FECHAACTUAL & "',@DIRECCION,@IDREVISOR,@IDCLIENTE);                                       
-                                                INSERT INTO LINEASPEDIDOS(IDLINEAS,CANTIDAD,PRECIOUNIDAD,IDPEDIDO,IDPRODUCTO) VALUES ('LIN' || (SELECT COUNT(*) FROM LINEASPEDIDOS ),@CANTIDAD,@PRECIOUNIDAD,@IDPEDIDO,@IDPRODUCTO);"
-            Dim Command As New SQLiteCommand(InsertPedidoQuery, MiConexion)
-            Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
-            Command.Parameters.AddWithValue("@DIRECCION", DIRECCION)
-            Command.Parameters.AddWithValue("@IDREVISOR", IDREVISOR)
-            Command.Parameters.AddWithValue("@IDCLIENTE", IDCLIENTE)
+            Dim UpdatePedidoQuery As String = "UPDATE LINEASPEDIDOS SET IDLINEAS = @IDLINEAS, CANTIDAD = @CANTIDAD,PRECIOUNIDAD = @PRECIOUNIDAD,IDPEDIDO = @IDPEDIDO ,@IDPRODUCTO = IDPRODUCTO WHERE IDLINEAS = @IDLINEAS; "
+            Dim Command As New SQLiteCommand(UpdatePedidoQuery, MiConexion)
+            Command.Parameters.AddWithValue("@IDLINEAS", IDLINEAS)
             Command.Parameters.AddWithValue("@CANTIDAD", CANTIDAD)
             Command.Parameters.AddWithValue("@PRECIOUNIDAD", PRECIOUNIDAD)
+            Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
             Command.Parameters.AddWithValue("@IDPRODUCTO", IDPRODUCTO)
             MiConexion.Open()
             Command.ExecuteNonQuery()
 
+        End Using
+    End Sub
+
+    Public Sub InsertLinea(IDLINEAS As String, CANTIDAD As Integer, PRECIOUNIDAD As Integer, IDPEDIDO As String, IDPRODUCTO As String)
+        Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
+            Dim FECHAACTUAL As String = DateTime.Now.ToShortDateString()
+            Dim InsertLineaQuery As String = "INSERT INTO LINEASPEDIDOS(IDLINEAS,CANTIDAD,PRECIOUNIDAD,IDPEDIDO,IDPRODUCTO) VALUES(@IDLINEAS,@CANTIDAD,@PRECIOUNIDAD,@IDPEDIDO,@IDPRODUCTO); "
+            Dim Command As New SQLiteCommand(InsertLineaQuery, MiConexion)
+            Command.Parameters.AddWithValue("@IDLINEAS", IDLINEAS)
+            Command.Parameters.AddWithValue("@CANTIDAD", CANTIDAD)
+            Command.Parameters.AddWithValue("@PRECIOUNIDAD", PRECIOUNIDAD)
+            Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
+            Command.Parameters.AddWithValue("@IDPRODUCTO", IDPRODUCTO)
+            MiConexion.Open()
+            Command.ExecuteNonQuery()
 
         End Using
     End Sub

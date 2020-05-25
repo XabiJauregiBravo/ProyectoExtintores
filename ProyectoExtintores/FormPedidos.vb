@@ -1,6 +1,6 @@
 ﻿Public Class FormPedidos
     Public Sub FormClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim dt = ControladorDatos.PedidosLineas()
+        Dim dt = ControladorDatos.VerTabla("PEDIDOS")
         TablaPedidosxLineas.DataSource = dt
         TablaPedidosxLineas.Refresh()
     End Sub
@@ -10,7 +10,7 @@
     End Sub
     Private Sub BotonVerDatos_Click(sender As Object, e As EventArgs) Handles botonVerDatos.Click
 
-        Dim dt = ControladorDatos.PedidosLineas()
+        Dim dt = ControladorDatos.VerTabla("PEDIDOS")
         TablaPedidosxLineas.DataSource = dt
         TablaPedidosxLineas.Refresh()
     End Sub
@@ -33,4 +33,7 @@
         TablaPedidosxLineas.Refresh()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        TablaPedidosxLineas.Refresh()
+    End Sub
 End Class

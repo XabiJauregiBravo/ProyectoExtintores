@@ -35,7 +35,7 @@
     End Sub
 
     Private Sub BotonFacturas_Click(sender As Object, e As EventArgs) Handles botonFacturas.Click
-        FormPedidos.Show()
+        FormGestionPedidos.Show()
         FormInicial.Hide()
         Me.Hide()
     End Sub
