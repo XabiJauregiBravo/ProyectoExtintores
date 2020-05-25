@@ -9,7 +9,7 @@ Public Class FormInicial
 
     'Link al repositorio de GitHub
     Private Sub BotonGitHub_Click(sender As Object, e As EventArgs) Handles botonGithub.Click
-        Dim url As String = "https://github.com/XabiJauregiBravo"
+        Dim url As String = "https://github.com/XabiJauregiBravo/ProyectoExtintores"
         Process.Start(url)
     End Sub
 
