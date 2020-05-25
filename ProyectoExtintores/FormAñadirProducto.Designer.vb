@@ -31,6 +31,8 @@ Partial Class FormAñadirProducto
         Me.TextboxIdProveedor = New System.Windows.Forms.TextBox()
         Me.TextboxIdAlmacen = New System.Windows.Forms.TextBox()
         Me.TextboxIdExtintor = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -51,7 +53,7 @@ Partial Class FormAñadirProducto
         Me.botonAñadir.ForeColor = System.Drawing.Color.White
         Me.botonAñadir.Image = Global.ProyectoExtintores.My.Resources.Resources.iconoañadir
         Me.botonAñadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.botonAñadir.Location = New System.Drawing.Point(56, 183)
+        Me.botonAñadir.Location = New System.Drawing.Point(63, 225)
         Me.botonAñadir.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.botonAñadir.Name = "botonAñadir"
         Me.botonAñadir.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -66,7 +68,7 @@ Partial Class FormAñadirProducto
         Me.Cantidad.AutoSize = True
         Me.Cantidad.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cantidad.ForeColor = System.Drawing.Color.Black
-        Me.Cantidad.Location = New System.Drawing.Point(6, 144)
+        Me.Cantidad.Location = New System.Drawing.Point(8, 148)
         Me.Cantidad.Name = "Cantidad"
         Me.Cantidad.Size = New System.Drawing.Size(87, 16)
         Me.Cantidad.TabIndex = 15
@@ -96,7 +98,7 @@ Partial Class FormAñadirProducto
         '
         'TextboxIdProveedor
         '
-        Me.TextboxIdProveedor.Location = New System.Drawing.Point(105, 141)
+        Me.TextboxIdProveedor.Location = New System.Drawing.Point(105, 144)
         Me.TextboxIdProveedor.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextboxIdProveedor.Name = "TextboxIdProveedor"
         Me.TextboxIdProveedor.Size = New System.Drawing.Size(138, 20)
@@ -118,12 +120,33 @@ Partial Class FormAñadirProducto
         Me.TextboxIdExtintor.Size = New System.Drawing.Size(128, 20)
         Me.TextboxIdExtintor.TabIndex = 10
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(101, 181)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox1.TabIndex = 62
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(8, 183)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(72, 16)
+        Me.Label3.TabIndex = 61
+        Me.Label3.Text = "IDALMACEN"
+        '
         'FormAñadirProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(281, 242)
+        Me.ClientSize = New System.Drawing.Size(281, 279)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.botonAñadir)
         Me.Controls.Add(Me.Cantidad)
@@ -134,9 +157,9 @@ Partial Class FormAñadirProducto
         Me.Controls.Add(Me.TextboxIdExtintor)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(297, 281)
+        Me.MaximumSize = New System.Drawing.Size(297, 318)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(297, 281)
+        Me.MinimumSize = New System.Drawing.Size(297, 318)
         Me.Name = "FormAñadirProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Añadir Producto"
@@ -153,4 +176,6 @@ Partial Class FormAñadirProducto
     Friend WithEvents TextboxIdProveedor As TextBox
     Friend WithEvents TextboxIdAlmacen As TextBox
     Friend WithEvents TextboxIdExtintor As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label3 As Label
 End Class

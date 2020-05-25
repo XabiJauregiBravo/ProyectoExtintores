@@ -31,6 +31,8 @@ Partial Class FormEditarProducto
         Me.TextboxDescripcion = New System.Windows.Forms.TextBox()
         Me.TextboxIdProducto = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'TextBoxProveedor
@@ -60,7 +62,7 @@ Partial Class FormEditarProducto
         Me.botonEditarCliente.ForeColor = System.Drawing.Color.White
         Me.botonEditarCliente.Image = Global.ProyectoExtintores.My.Resources.Resources.iconoeditar
         Me.botonEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.botonEditarCliente.Location = New System.Drawing.Point(77, 222)
+        Me.botonEditarCliente.Location = New System.Drawing.Point(86, 273)
         Me.botonEditarCliente.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.botonEditarCliente.Name = "botonEditarCliente"
         Me.botonEditarCliente.Size = New System.Drawing.Size(110, 41)
@@ -117,11 +119,32 @@ Partial Class FormEditarProducto
         Me.Label1.TabIndex = 51
         Me.Label1.Text = "Editar Producto"
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(100, 221)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox1.TabIndex = 60
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(7, 223)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(72, 16)
+        Me.Label3.TabIndex = 59
+        Me.Label3.Text = "IDALMACEN"
+        '
         'FormEditarProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(281, 281)
+        Me.ClientSize = New System.Drawing.Size(281, 339)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBoxProveedor)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.botonEditarCliente)
@@ -131,8 +154,8 @@ Partial Class FormEditarProducto
         Me.Controls.Add(Me.TextboxIdProducto)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximumSize = New System.Drawing.Size(297, 320)
-        Me.MinimumSize = New System.Drawing.Size(297, 278)
+        Me.MaximumSize = New System.Drawing.Size(297, 378)
+        Me.MinimumSize = New System.Drawing.Size(297, 378)
         Me.Name = "FormEditarProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar Extintor"
@@ -149,4 +172,6 @@ Partial Class FormEditarProducto
     Friend WithEvents TextboxDescripcion As TextBox
     Friend WithEvents TextboxIdProducto As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label3 As Label
 End Class

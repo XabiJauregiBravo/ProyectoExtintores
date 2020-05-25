@@ -152,13 +152,14 @@ Public Module ControladorDatos
         End Using
     End Sub
 
-    Public Sub InsertProducto(IDPRODUCTO As String, DESCRIPCION As String, IDPROVEEDOR As String)
+    Public Sub InsertProducto(IDPRODUCTO As String, DESCRIPCION As String, IDPROVEEDOR As String, IDALMACEN As String)
         Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
-            Dim InsertProductoQuery As String = "INSERT INTO PRODUCTOS(IDPRODUCTO,DESCRIPCION,IDPROVEEDOR) VALUES (@IDPRODUCTO,@DESCRIPCION,@IDPROVEEDOR);"
+            Dim InsertProductoQuery As String = "INSERT INTO PRODUCTOS(IDPRODUCTO,DESCRIPCION,IDPROVEEDOR,IDALMACEN) VALUES (@IDPRODUCTO,@DESCRIPCION,@IDPROVEEDOR,@IDALMACEN);"
             Dim Command As New SQLiteCommand(InsertProductoQuery, MiConexion)
             Command.Parameters.AddWithValue("@IDPRODUCTO", IDPRODUCTO)
             Command.Parameters.AddWithValue("@DESCRIPCION", DESCRIPCION)
             Command.Parameters.AddWithValue("@IDPROVEEDOR", IDPROVEEDOR)
+            Command.Parameters.AddWithValue("@IDALMACEN", IDALMACEN)
 
             MiConexion.Open()
             Command.ExecuteNonQuery()
@@ -178,13 +179,14 @@ Public Module ControladorDatos
         End Using
     End Sub
 
-    Public Sub UpdateProducto(IDPRODUCTO As String, DESCRIPCION As String, IDPROVEEDOR As String)
+    Public Sub UpdateProducto(IDPRODUCTO As String, DESCRIPCION As String, IDPROVEEDOR As String, IDALMACEN As String)
         Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
-            Dim UpdateProductoQuery As String = "UPDATE PRODUCTOS SET DESCRIPCION = @DESCRIPCION, IDPROVEEDOR = @IDPROVEEDOR WHERE IDPRODUCTO = @IDPRODUCTO;"
+            Dim UpdateProductoQuery As String = "UPDATE PRODUCTOS SET DESCRIPCION = @DESCRIPCION, IDPROVEEDOR = @IDPROVEEDOR,IDALMACEN = @IDALMACEN WHERE IDPRODUCTO = @IDPRODUCTO;"
             Dim Command As New SQLiteCommand(UpdateProductoQuery, MiConexion)
             Command.Parameters.AddWithValue("@IDPRODUCTO", IDPRODUCTO)
             Command.Parameters.AddWithValue("@DESCRIPCION", DESCRIPCION)
             Command.Parameters.AddWithValue("@IDPROVEEDOR", IDPROVEEDOR)
+            Command.Parameters.AddWithValue("@IDALMACEN", IDALMACEN)
             MiConexion.Open()
             Command.ExecuteNonQuery()
 

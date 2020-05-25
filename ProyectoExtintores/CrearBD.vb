@@ -30,12 +30,13 @@ Module CrearBD
             IDPRODUCTO varchar(10) NOT NULL PRIMARY KEY,
             DESCRIPCION varchar(40) NOT NULL,
             IDPROVEEDOR varchar(10) NOT NULL REFERENCES PROVEEDORES (IDPROVEEDOR)
+            IDALMACEN varchar(10) NOT NULL REFERENCES ALMACENES (IDALMACEN)
             );
 
-            INSERT INTO PRODUCTOS(IDPRODUCTO,DESCRIPCION,IDPROVEEDOR) 
+            INSERT INTO PRODUCTOS(IDPRODUCTO,DESCRIPCION,IDPROVEEDOR,IDALMACEN) 
             VALUES
-            ('EXTPOLVO','Extintor de Polvo','PRO001'),
-            ('EXTCO2','Extintor de Co2','PRO002');
+            ('EXTPOLVO','Extintor de Polvo','PRO001','ALM001'),
+            ('EXTCO2','Extintor de Co2','PRO002','ALM001');
 
             CREATE TABLE REVISORES(
             IDREVISOR varchar(10) NOT NULL PRIMARY KEY,
