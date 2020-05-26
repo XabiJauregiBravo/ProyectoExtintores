@@ -1,4 +1,6 @@
-﻿Public Class FormPedidos
+﻿Imports System.Data.SQLite
+
+Public Class FormPedidos
     Public Sub FormClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim dt = ControladorDatos.VerTabla("PEDIDOS")
         TablaPedidosxLineas.DataSource = dt
@@ -21,11 +23,15 @@
     End Sub
 
     Private Sub BotonEliminar_Click(sender As Object, e As EventArgs) Handles botonEliminar.Click
-        Dim Title As String = "Eliminar Pedido"
-        Dim IDPEDIDOELIMINAR As String = InputBox("Introduce el IDPEDIDO del Pedido que desees eliminar", Title)
-        Dim MiConexion = ControladorDatos.Conexion()
-        ControladorDatos.DeletePedido(IDPEDIDOELIMINAR)
-        TablaPedidosxLineas.Refresh()
+        Try
+            Dim Title As String = "Eliminar Pedido"
+            Dim IDPEDIDOELIMINAR As String = InputBox("Introduce el IDPEDIDO del Pedido que desees eliminar", Title)
+            Dim MiConexion = ControladorDatos.Conexion()
+            ControladorDatos.DeletePedido(IDPEDIDOELIMINAR)
+            TablaPedidosxLineas.Refresh()
+        Catch Ex As SQLiteException
+            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+        End Try
     End Sub
 
     Private Sub BotonEditar_Click(sender As Object, e As EventArgs) Handles botonEditar.Click

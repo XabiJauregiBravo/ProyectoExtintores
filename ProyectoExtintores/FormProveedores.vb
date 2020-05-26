@@ -1,4 +1,6 @@
-﻿Public Class FormProveedores
+﻿Imports System.Data.SQLite
+
+Public Class FormProveedores
     Private Sub FormProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim dt = ControladorDatos.VerTabla("PROVEEDORES")
@@ -14,11 +16,15 @@
         TablaProveedores.Refresh()
     End Sub
     Private Sub BotonEliminar_Click(sender As Object, e As EventArgs) Handles botonEliminar.Click
-        Dim Title As String = "Eliminar Proveedor"
-        Dim IDPROVEEDORELIMINAR As String = InputBox("Introduce el IDPROVEEDOR del Proveedor que desees eliminar", Title)
-        Dim MiConexion = ControladorDatos.Conexion()
-        ControladorDatos.DeleteProveedor(IDPROVEEDORELIMINAR)
-        TablaProveedores.Refresh()
+        Try
+            Dim Title As String = "Eliminar Proveedor"
+            Dim IDPROVEEDORELIMINAR As String = InputBox("Introduce el IDPROVEEDOR del Proveedor que desees eliminar", Title)
+            Dim MiConexion = ControladorDatos.Conexion()
+            ControladorDatos.DeleteProveedor(IDPROVEEDORELIMINAR)
+            TablaProveedores.Refresh()
+        Catch Ex As SQLiteException
+            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+        End Try
     End Sub
     Private Sub BotonEditar_Click(sender As Object, e As EventArgs) Handles botonEditar.Click
         FormEditarProveedor.Show()

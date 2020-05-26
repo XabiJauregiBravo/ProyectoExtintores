@@ -14,7 +14,7 @@ Public Class FormInicial
     End Sub
 
     'Inicio de la aplicacion
-    Private Sub botonIniciar_Click(sender As Object, e As EventArgs) Handles botonIniciar.Click
+    Private Sub BotonIniciar_Click(sender As Object, e As EventArgs) Handles botonIniciar.Click
         If Directory.Exists("C:\database") Then
             If File.Exists(RutaDb) Then
                 FormMenuPrincipal.Show()

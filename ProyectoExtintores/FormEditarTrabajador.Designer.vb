@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormEditarRevisor
+Partial Class FormEditarTrabajador
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,7 +22,7 @@ Partial Class FormEditarRevisor
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEditarRevisor))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEditarTrabajador))
         Me.BotonEditar = New System.Windows.Forms.Button()
         Me.lblDNI = New System.Windows.Forms.Label()
         Me.Direccion = New System.Windows.Forms.Label()
@@ -77,11 +77,11 @@ Partial Class FormEditarRevisor
         Me.IDALMACEN.AutoSize = True
         Me.IDALMACEN.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IDALMACEN.ForeColor = System.Drawing.Color.Black
-        Me.IDALMACEN.Location = New System.Drawing.Point(18, 103)
+        Me.IDALMACEN.Location = New System.Drawing.Point(7, 103)
         Me.IDALMACEN.Name = "IDALMACEN"
-        Me.IDALMACEN.Size = New System.Drawing.Size(65, 16)
+        Me.IDALMACEN.Size = New System.Drawing.Size(88, 16)
         Me.IDALMACEN.TabIndex = 35
-        Me.IDALMACEN.Text = "IDREVISOR"
+        Me.IDALMACEN.Text = "IDTRABAJADOR"
         '
         'TextboxNombreCompletoEditarRevisor
         '
@@ -93,10 +93,10 @@ Partial Class FormEditarRevisor
         '
         'TextboxIdRevisorEditarRevisor
         '
-        Me.TextboxIdRevisorEditarRevisor.Location = New System.Drawing.Point(89, 101)
+        Me.TextboxIdRevisorEditarRevisor.Location = New System.Drawing.Point(101, 101)
         Me.TextboxIdRevisorEditarRevisor.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextboxIdRevisorEditarRevisor.Name = "TextboxIdRevisorEditarRevisor"
-        Me.TextboxIdRevisorEditarRevisor.Size = New System.Drawing.Size(156, 20)
+        Me.TextboxIdRevisorEditarRevisor.Size = New System.Drawing.Size(144, 20)
         Me.TextboxIdRevisorEditarRevisor.TabIndex = 32
         '
         'Label1
@@ -105,9 +105,9 @@ Partial Class FormEditarRevisor
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(45, 44)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(142, 24)
+        Me.Label1.Size = New System.Drawing.Size(178, 24)
         Me.Label1.TabIndex = 31
-        Me.Label1.Text = "Editar Revisor"
+        Me.Label1.Text = "Editar Trabajador"
         '
         'TextBoxDNIEditarRevisor
         '
@@ -117,7 +117,7 @@ Partial Class FormEditarRevisor
         Me.TextBoxDNIEditarRevisor.Size = New System.Drawing.Size(144, 20)
         Me.TextBoxDNIEditarRevisor.TabIndex = 41
         '
-        'FormEditarRevisor
+        'FormEditarTrabajador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -136,7 +136,7 @@ Partial Class FormEditarRevisor
         Me.MaximumSize = New System.Drawing.Size(297, 339)
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(297, 339)
-        Me.Name = "FormEditarRevisor"
+        Me.Name = "FormEditarTrabajador"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar Revisor"
         Me.ResumeLayout(False)

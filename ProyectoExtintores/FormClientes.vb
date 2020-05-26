@@ -1,4 +1,6 @@
-﻿Public Class FormClientes
+﻿Imports System.Data.SQLite
+
+Public Class FormClientes
 
     Public Sub FormClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -23,11 +25,15 @@
     End Sub
 
     Private Sub BotonEliminar_Click(sender As Object, e As EventArgs) Handles botonEliminar.Click
-        Dim Title As String = "Eliminar Cliente"
-        Dim IDCLIENTEELIMINAR As String = InputBox("Introduce el IDCLIENTE del Cliente que desees eliminar", Title)
-        Dim MiConexion = ControladorDatos.Conexion()
-        ControladorDatos.DeleteCliente(IDCLIENTEELIMINAR)
-        TablaClientes.Refresh()
+        Try
+            Dim Title As String = "Eliminar Cliente"
+            Dim IDCLIENTEELIMINAR As String = InputBox("Introduce el IDCLIENTE del Cliente que desees eliminar", Title)
+            Dim MiConexion = ControladorDatos.Conexion()
+            ControladorDatos.DeleteCliente(IDCLIENTEELIMINAR)
+            TablaClientes.Refresh()
+        Catch Ex As SQLiteException
+            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+        End Try
     End Sub
 
     Private Sub BotonEditar_Click(sender As Object, e As EventArgs) Handles botonEditar.Click

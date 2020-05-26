@@ -38,7 +38,7 @@ Partial Class FormInicial
         Me.botonGenerarBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.botonGenerarBD.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.botonGenerarBD.ForeColor = System.Drawing.Color.White
-        Me.botonGenerarBD.Location = New System.Drawing.Point(460, 375)
+        Me.botonGenerarBD.Location = New System.Drawing.Point(467, 363)
         Me.botonGenerarBD.Name = "botonGenerarBD"
         Me.botonGenerarBD.Size = New System.Drawing.Size(138, 82)
         Me.botonGenerarBD.TabIndex = 0
@@ -59,9 +59,9 @@ Partial Class FormInicial
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(35, 129)
+        Me.Label2.Location = New System.Drawing.Point(39, 137)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(664, 209)
+        Me.Label2.Size = New System.Drawing.Size(664, 171)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = resources.GetString("Label2.Text")
         '
@@ -72,7 +72,7 @@ Partial Class FormInicial
         Me.botonIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.botonIniciar.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.botonIniciar.ForeColor = System.Drawing.Color.White
-        Me.botonIniciar.Location = New System.Drawing.Point(300, 375)
+        Me.botonIniciar.Location = New System.Drawing.Point(300, 363)
         Me.botonIniciar.Name = "botonIniciar"
         Me.botonIniciar.Size = New System.Drawing.Size(138, 82)
         Me.botonIniciar.TabIndex = 3
@@ -87,7 +87,7 @@ Partial Class FormInicial
         Me.botonGithub.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.botonGithub.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.botonGithub.ForeColor = System.Drawing.Color.White
-        Me.botonGithub.Location = New System.Drawing.Point(140, 375)
+        Me.botonGithub.Location = New System.Drawing.Point(123, 363)
         Me.botonGithub.Name = "botonGithub"
         Me.botonGithub.Size = New System.Drawing.Size(138, 82)
         Me.botonGithub.TabIndex = 4
@@ -106,6 +106,8 @@ Partial Class FormInicial
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.botonGenerarBD)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximumSize = New System.Drawing.Size(785, 517)
+        Me.MinimumSize = New System.Drawing.Size(785, 517)
         Me.Name = "FormInicial"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Proyecto Extintores"

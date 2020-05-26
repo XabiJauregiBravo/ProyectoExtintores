@@ -120,8 +120,6 @@
   <data name="Label2.Text" xml:space="preserve">
     <value>- Esta proyecto trata sobre una empresa dedicada a la Revisión y Venta de Extintores.
 
-- Puede usarse para más de una empresa si se implementara un Login.
-
 - Utiliza una base de datos SQLite.
 
 - Para más información sobre el proyecto pulsa GitHub.

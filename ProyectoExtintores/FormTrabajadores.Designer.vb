@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormRevisores
+Partial Class FormTrabajadores
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -26,13 +26,13 @@ Partial Class FormRevisores
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormRevisores))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormTrabajadores))
         Me.botonAñadir = New System.Windows.Forms.Button()
         Me.botonEditar = New System.Windows.Forms.Button()
         Me.botonEliminar = New System.Windows.Forms.Button()
-        Me.TablaRevisores = New System.Windows.Forms.DataGridView()
+        Me.TablaTrabajadores = New System.Windows.Forms.DataGridView()
         Me.botonVerDatos = New System.Windows.Forms.Button()
-        CType(Me.TablaRevisores, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TablaTrabajadores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'botonAñadir
@@ -86,11 +86,11 @@ Partial Class FormRevisores
         Me.botonEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.botonEliminar.UseVisualStyleBackColor = False
         '
-        'TablaRevisores
+        'TablaTrabajadores
         '
-        Me.TablaRevisores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.TablaRevisores.BackgroundColor = System.Drawing.Color.White
-        Me.TablaRevisores.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TablaTrabajadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.TablaTrabajadores.BackgroundColor = System.Drawing.Color.White
+        Me.TablaTrabajadores.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -98,9 +98,9 @@ Partial Class FormRevisores
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.TablaRevisores.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.TablaRevisores.ColumnHeadersHeight = 60
-        Me.TablaRevisores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.TablaTrabajadores.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.TablaTrabajadores.ColumnHeadersHeight = 60
+        Me.TablaTrabajadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -108,10 +108,10 @@ Partial Class FormRevisores
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.TablaRevisores.DefaultCellStyle = DataGridViewCellStyle2
-        Me.TablaRevisores.Location = New System.Drawing.Point(0, -2)
-        Me.TablaRevisores.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TablaRevisores.Name = "TablaRevisores"
+        Me.TablaTrabajadores.DefaultCellStyle = DataGridViewCellStyle2
+        Me.TablaTrabajadores.Location = New System.Drawing.Point(0, -2)
+        Me.TablaTrabajadores.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TablaTrabajadores.Name = "TablaTrabajadores"
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -119,21 +119,21 @@ Partial Class FormRevisores
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.TablaRevisores.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.TablaTrabajadores.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightGray
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        Me.TablaRevisores.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.TablaRevisores.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White
-        Me.TablaRevisores.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TablaRevisores.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
-        Me.TablaRevisores.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.TablaRevisores.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black
-        Me.TablaRevisores.RowTemplate.Height = 30
-        Me.TablaRevisores.Size = New System.Drawing.Size(585, 548)
-        Me.TablaRevisores.TabIndex = 7
+        Me.TablaTrabajadores.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.TablaTrabajadores.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White
+        Me.TablaTrabajadores.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TablaTrabajadores.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
+        Me.TablaTrabajadores.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.TablaTrabajadores.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black
+        Me.TablaTrabajadores.RowTemplate.Height = 30
+        Me.TablaTrabajadores.Size = New System.Drawing.Size(585, 548)
+        Me.TablaTrabajadores.TabIndex = 7
         '
         'botonVerDatos
         '
@@ -152,7 +152,7 @@ Partial Class FormRevisores
         Me.botonVerDatos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.botonVerDatos.UseVisualStyleBackColor = False
         '
-        'FormRevisores
+        'FormTrabajadores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -161,14 +161,14 @@ Partial Class FormRevisores
         Me.Controls.Add(Me.botonAñadir)
         Me.Controls.Add(Me.botonEditar)
         Me.Controls.Add(Me.botonEliminar)
-        Me.Controls.Add(Me.TablaRevisores)
+        Me.Controls.Add(Me.TablaTrabajadores)
         Me.Controls.Add(Me.botonVerDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(825, 584)
-        Me.Name = "FormRevisores"
+        Me.Name = "FormTrabajadores"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestión Revisores"
-        CType(Me.TablaRevisores, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TablaTrabajadores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -176,6 +176,6 @@ Partial Class FormRevisores
     Friend WithEvents botonAñadir As Button
     Friend WithEvents botonEditar As Button
     Friend WithEvents botonEliminar As Button
-    Friend WithEvents TablaRevisores As DataGridView
+    Friend WithEvents TablaTrabajadores As DataGridView
     Friend WithEvents botonVerDatos As Button
 End Class

@@ -26,6 +26,7 @@ Partial Class FormGestionPedidos
         Me.botonFacturas = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.LabelMenuPrincipal = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'botonFacturas
@@ -60,18 +61,32 @@ Partial Class FormGestionPedidos
         Me.LabelMenuPrincipal.BackColor = System.Drawing.Color.White
         Me.LabelMenuPrincipal.Font = New System.Drawing.Font("Century Gothic", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelMenuPrincipal.ForeColor = System.Drawing.Color.Black
-        Me.LabelMenuPrincipal.Location = New System.Drawing.Point(29, 30)
+        Me.LabelMenuPrincipal.Location = New System.Drawing.Point(146, 29)
         Me.LabelMenuPrincipal.Name = "LabelMenuPrincipal"
         Me.LabelMenuPrincipal.Size = New System.Drawing.Size(401, 42)
         Me.LabelMenuPrincipal.TabIndex = 8
         Me.LabelMenuPrincipal.Text = "Menú Gestión Pedidos"
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Black
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(499, 137)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(174, 153)
+        Me.Button2.TabIndex = 9
+        Me.Button2.Text = "Crear Factura"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'FormGestionPedidos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(501, 328)
+        Me.ClientSize = New System.Drawing.Size(741, 343)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.LabelMenuPrincipal)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.botonFacturas)
@@ -87,4 +102,5 @@ Partial Class FormGestionPedidos
     Friend WithEvents botonFacturas As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents LabelMenuPrincipal As Label
+    Friend WithEvents Button2 As Button
 End Class

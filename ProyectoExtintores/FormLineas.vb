@@ -1,4 +1,6 @@
-﻿Public Class FormLineas
+﻿Imports System.Data.SQLite
+
+Public Class FormLineas
     Public Sub FormLineas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim dt = ControladorDatos.VerTabla("LINEASPEDIDOS")
         TablaLineas.DataSource = dt
@@ -20,11 +22,15 @@
     End Sub
 
     Private Sub BotonEliminar_Click(sender As Object, e As EventArgs) Handles botonEliminar.Click
-        Dim Title As String = "Eliminar Linea Pedido"
-        Dim IDLINEAELIMINAR As String = InputBox("Introduce el IDLinea de la Linea de Pedidos que desees eliminar", Title)
-        Dim MiConexion = ControladorDatos.Conexion()
-        ControladorDatos.DeleteLinea(IDLINEAELIMINAR)
-        TablaLineas.Refresh()
+        Try
+            Dim Title As String = "Eliminar Linea Pedido"
+            Dim IDLINEAELIMINAR As String = InputBox("Introduce el IDLinea de la Linea de Pedidos que desees eliminar", Title)
+            Dim MiConexion = ControladorDatos.Conexion()
+            ControladorDatos.DeleteLinea(IDLINEAELIMINAR)
+            TablaLineas.Refresh()
+        Catch Ex As SQLiteException
+            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+        End Try
     End Sub
 
     Private Sub BotonEditar_Click(sender As Object, e As EventArgs) Handles botonEditar.Click

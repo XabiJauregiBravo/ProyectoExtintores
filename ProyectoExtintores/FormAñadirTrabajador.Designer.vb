@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormAñadirRevisor
+Partial Class FormAñadirTrabajador
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,7 +22,7 @@ Partial Class FormAñadirRevisor
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAñadirRevisor))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAñadirTrabajador))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.botonAñadir = New System.Windows.Forms.Button()
         Me.Cantidad = New System.Windows.Forms.Label()
@@ -39,9 +39,9 @@ Partial Class FormAñadirRevisor
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(62, 21)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(157, 24)
+        Me.Label1.Size = New System.Drawing.Size(193, 24)
         Me.Label1.TabIndex = 17
-        Me.Label1.Text = "Nuevo Revisor"
+        Me.Label1.Text = "Nuevo Trabajador"
         '
         'botonAñadir
         '
@@ -88,11 +88,11 @@ Partial Class FormAñadirRevisor
         Me.IDALMACEN.AutoSize = True
         Me.IDALMACEN.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IDALMACEN.ForeColor = System.Drawing.Color.Black
-        Me.IDALMACEN.Location = New System.Drawing.Point(21, 78)
+        Me.IDALMACEN.Location = New System.Drawing.Point(12, 73)
         Me.IDALMACEN.Name = "IDALMACEN"
-        Me.IDALMACEN.Size = New System.Drawing.Size(65, 16)
+        Me.IDALMACEN.Size = New System.Drawing.Size(88, 16)
         Me.IDALMACEN.TabIndex = 13
-        Me.IDALMACEN.Text = "IDREVISOR"
+        Me.IDALMACEN.Text = "IDTRABAJADOR"
         '
         'TextboxDNIAñadirRevisor
         '
@@ -118,7 +118,7 @@ Partial Class FormAñadirRevisor
         Me.TextboxIdRevisorAnadirRevisor.Size = New System.Drawing.Size(128, 20)
         Me.TextboxIdRevisorAnadirRevisor.TabIndex = 10
         '
-        'FormAñadirRevisor
+        'FormAñadirTrabajador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -137,7 +137,7 @@ Partial Class FormAñadirRevisor
         Me.MaximumSize = New System.Drawing.Size(297, 339)
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(297, 339)
-        Me.Name = "FormAñadirRevisor"
+        Me.Name = "FormAñadirTrabajador"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Añadir Revisor"
         Me.ResumeLayout(False)

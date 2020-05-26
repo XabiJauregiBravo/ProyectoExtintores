@@ -69,6 +69,7 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.112.2\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -135,10 +136,10 @@
     <Compile Include="FormAñadirProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAñadirRevisor.Designer.vb">
-      <DependentUpon>FormAñadirRevisor.vb</DependentUpon>
+    <Compile Include="FormAñadirTrabajador.Designer.vb">
+      <DependentUpon>FormAñadirTrabajador.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAñadirRevisor.vb">
+    <Compile Include="FormAñadirTrabajador.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormClientes.Designer.vb">
@@ -183,10 +184,10 @@
     <Compile Include="FormEditarProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditarRevisor.Designer.vb">
-      <DependentUpon>FormEditarRevisor.vb</DependentUpon>
+    <Compile Include="FormEditarTrabajador.Designer.vb">
+      <DependentUpon>FormEditarTrabajador.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormEditarRevisor.vb">
+    <Compile Include="FormEditarTrabajador.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormGestionPedidos.Designer.vb">
@@ -232,10 +233,10 @@
     <Compile Include="FormProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRevisores.Designer.vb">
-      <DependentUpon>FormRevisores.vb</DependentUpon>
+    <Compile Include="FormTrabajadores.Designer.vb">
+      <DependentUpon>FormTrabajadores.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormRevisores.vb">
+    <Compile Include="FormTrabajadores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -276,8 +277,8 @@
     <EmbeddedResource Include="FormAñadirProveedor.resx">
       <DependentUpon>FormAñadirProveedor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAñadirRevisor.resx">
-      <DependentUpon>FormAñadirRevisor.vb</DependentUpon>
+    <EmbeddedResource Include="FormAñadirTrabajador.resx">
+      <DependentUpon>FormAñadirTrabajador.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.vb</DependentUpon>
@@ -300,8 +301,8 @@
     <EmbeddedResource Include="FormEditarProveedor.resx">
       <DependentUpon>FormEditarProveedor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEditarRevisor.resx">
-      <DependentUpon>FormEditarRevisor.vb</DependentUpon>
+    <EmbeddedResource Include="FormEditarTrabajador.resx">
+      <DependentUpon>FormEditarTrabajador.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionPedidos.resx">
       <DependentUpon>FormGestionPedidos.vb</DependentUpon>
@@ -324,8 +325,8 @@
     <EmbeddedResource Include="FormProveedores.resx">
       <DependentUpon>FormProveedores.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRevisores.resx">
-      <DependentUpon>FormRevisores.vb</DependentUpon>
+    <EmbeddedResource Include="FormTrabajadores.resx">
+      <DependentUpon>FormTrabajadores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

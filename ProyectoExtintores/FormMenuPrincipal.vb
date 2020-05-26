@@ -17,7 +17,7 @@
     End Sub
 
     Private Sub BotonRevisores_Click(sender As Object, e As EventArgs) Handles botonRevisores.Click
-        FormRevisores.Show()
+        FormTrabajadores.Show()
         FormInicial.Hide()
         Me.Hide()
     End Sub
