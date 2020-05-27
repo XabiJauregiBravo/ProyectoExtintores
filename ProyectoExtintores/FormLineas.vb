@@ -7,7 +7,7 @@ Public Class FormLineas
     End Sub
 
     Private Sub FormLineas_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        FormMenuPrincipal.Show()
+        FormGestionPedidos.Show()
     End Sub
     Private Sub BotonVerDatos_Click(sender As Object, e As EventArgs) Handles botonVerDatos.Click
 
@@ -38,7 +38,9 @@ Public Class FormLineas
         TablaLineas.Refresh()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        TablaLineas.Refresh()
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim dat = ControladorDatos.BuscarLinea()
+        TablaLineas.DataSource = dat
     End Sub
+
 End Class

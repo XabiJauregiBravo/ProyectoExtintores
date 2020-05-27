@@ -35,6 +35,8 @@ Partial Class FormAñadirLineaPedido
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -55,7 +57,7 @@ Partial Class FormAñadirLineaPedido
         Me.botonAñadir.ForeColor = System.Drawing.Color.White
         Me.botonAñadir.Image = Global.ProyectoExtintores.My.Resources.Resources.iconoañadir
         Me.botonAñadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.botonAñadir.Location = New System.Drawing.Point(69, 317)
+        Me.botonAñadir.Location = New System.Drawing.Point(69, 366)
         Me.botonAñadir.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.botonAñadir.Name = "botonAñadir"
         Me.botonAñadir.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -116,10 +118,10 @@ Partial Class FormAñadirLineaPedido
         '
         'TextboxIdExtintor
         '
-        Me.TextboxIdExtintor.Location = New System.Drawing.Point(100, 111)
+        Me.TextboxIdExtintor.Location = New System.Drawing.Point(102, 111)
         Me.TextboxIdExtintor.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextboxIdExtintor.Name = "TextboxIdExtintor"
-        Me.TextboxIdExtintor.Size = New System.Drawing.Size(128, 20)
+        Me.TextboxIdExtintor.Size = New System.Drawing.Size(142, 20)
         Me.TextboxIdExtintor.TabIndex = 18
         '
         'Label2
@@ -146,10 +148,10 @@ Partial Class FormAñadirLineaPedido
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(106, 274)
+        Me.TextBox1.Location = New System.Drawing.Point(100, 274)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(138, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(144, 20)
         Me.TextBox1.TabIndex = 27
         '
         'TextBox2
@@ -160,12 +162,33 @@ Partial Class FormAñadirLineaPedido
         Me.TextBox2.Size = New System.Drawing.Size(142, 20)
         Me.TextBox2.TabIndex = 26
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(39, 321)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(50, 16)
+        Me.Label4.TabIndex = 30
+        Me.Label4.Text = "Servicio"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(95, 319)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox3.TabIndex = 31
+        '
         'FormAñadirLineaPedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(281, 382)
+        Me.ClientSize = New System.Drawing.Size(281, 433)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBox1)
@@ -180,9 +203,9 @@ Partial Class FormAñadirLineaPedido
         Me.Controls.Add(Me.TextboxIdExtintor)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(297, 421)
+        Me.MaximumSize = New System.Drawing.Size(297, 472)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(297, 421)
+        Me.MinimumSize = New System.Drawing.Size(297, 472)
         Me.Name = "FormAñadirLineaPedido"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormAñadirLineaPedido"
@@ -203,4 +226,6 @@ Partial Class FormAñadirLineaPedido
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TextBox3 As TextBox
 End Class

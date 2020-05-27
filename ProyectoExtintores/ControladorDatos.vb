@@ -21,7 +21,7 @@ Public Module ControladorDatos
             Return False
         End Try
         Try
-            Dim Comando As New SQLiteCommand
+            Dim Comando As New SQLiteCommand()
             Comando.Connection = MiConexion
             Comando.CommandText = "SELECT * FROM " & tabla
             Dim datareader As SQLiteDataReader
@@ -356,16 +356,17 @@ Public Module ControladorDatos
     End Sub
 
     ' EDITAR REGISTRO EN LINEASPEDIDOS
-    Public Sub UpdateLinea(IDLINEAS As String, CANTIDAD As Integer, PRECIOUNIDAD As Integer, IDPEDIDO As String, IDPRODUCTO As String)
+    Public Sub UpdateLinea(IDLINEAS As String, CANTIDAD As Integer, PRECIOUNIDAD As Integer, IDPEDIDO As String, IDPRODUCTO As String, SERVICIO As String)
         Try
             Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
-                Dim UpdatePedidoQuery As String = "UPDATE LINEASPEDIDOS SET IDLINEAS = @IDLINEAS, CANTIDAD = @CANTIDAD,PRECIOUNIDAD = @PRECIOUNIDAD,IDPEDIDO = @IDPEDIDO ,@IDPRODUCTO = IDPRODUCTO WHERE IDLINEAS = @IDLINEAS; "
+                Dim UpdatePedidoQuery As String = "UPDATE LINEASPEDIDOS SET IDLINEAS = @IDLINEAS, CANTIDAD = @CANTIDAD,PRECIOUNIDAD = @PRECIOUNIDAD,IDPEDIDO = @IDPEDIDO ,@IDPRODUCTO = IDPRODUCTO,SERVICIO = @SERVICIO  WHERE IDLINEAS = @IDLINEAS; "
                 Dim Command As New SQLiteCommand(UpdatePedidoQuery, MiConexion)
                 Command.Parameters.AddWithValue("@IDLINEAS", IDLINEAS)
                 Command.Parameters.AddWithValue("@CANTIDAD", CANTIDAD)
                 Command.Parameters.AddWithValue("@PRECIOUNIDAD", PRECIOUNIDAD)
                 Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
                 Command.Parameters.AddWithValue("@IDPRODUCTO", IDPRODUCTO)
+                Command.Parameters.AddWithValue("@SERVICIO", SERVICIO)
                 MiConexion.Open()
                 Command.ExecuteNonQuery()
             End Using
@@ -375,17 +376,18 @@ Public Module ControladorDatos
     End Sub
 
     'INSERTAR REGISTRO EN LINEASPEDIDOS
-    Public Sub InsertLinea(IDLINEAS As String, CANTIDAD As Integer, PRECIOUNIDAD As Integer, IDPEDIDO As String, IDPRODUCTO As String)
+    Public Sub InsertLinea(IDLINEAS As String, CANTIDAD As Integer, PRECIOUNIDAD As Integer, IDPEDIDO As String, IDPRODUCTO As String, SERVICIO As String)
         Try
             Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
                 Dim FECHAACTUAL As String = DateTime.Now.ToShortDateString()
-                Dim InsertLineaQuery As String = "INSERT INTO LINEASPEDIDOS(IDLINEAS,CANTIDAD,PRECIOUNIDAD,IDPEDIDO,IDPRODUCTO) VALUES(@IDLINEAS,@CANTIDAD,@PRECIOUNIDAD,@IDPEDIDO,@IDPRODUCTO); "
+                Dim InsertLineaQuery As String = "INSERT INTO LINEASPEDIDOS(IDLINEAS,CANTIDAD,PRECIOUNIDAD,IDPEDIDO,IDPRODUCTO,SERVICIO) VALUES(@IDLINEAS,@CANTIDAD,@PRECIOUNIDAD,@IDPEDIDO,@IDPRODUCTO,@SERVICIO); "
                 Dim Command As New SQLiteCommand(InsertLineaQuery, MiConexion)
                 Command.Parameters.AddWithValue("@IDLINEAS", IDLINEAS)
                 Command.Parameters.AddWithValue("@CANTIDAD", CANTIDAD)
                 Command.Parameters.AddWithValue("@PRECIOUNIDAD", PRECIOUNIDAD)
                 Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
                 Command.Parameters.AddWithValue("@IDPRODUCTO", IDPRODUCTO)
+                Command.Parameters.AddWithValue("@SERVICIO", SERVICIO)
                 MiConexion.Open()
                 Command.ExecuteNonQuery()
             End Using
@@ -393,11 +395,27 @@ Public Module ControladorDatos
             MsgBox("ERROR", MsgBoxStyle.Exclamation)
         End Try
     End Sub
+
+    'BUSCAR LINEAS POR IDPEDIDO
+    Public Function BuscarLinea()
+        Dim BUSCARLINEAS As String = "SELECT * FROM LINEASPEDIDOS WHERE IDPEDIDO LIKE '%" & FormLineas.TextBox1.Text & "%'; "
+        Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
+            Dim Command As New SQLiteCommand(BUSCARLINEAS, MiConexion)
+            MiConexion.Open()
+            Dim datareader As SQLiteDataReader
+            datareader = Command.ExecuteReader()
+            Dim datatable As New DataTable
+            datatable.Load(datareader)
+            datareader.Close()
+            Return datatable
+        End Using
+    End Function
+
     Public Sub Facturar(IDPEDIDO As String)
 
         'ID DEL CLIENTE QUE REALIZO EL PEDIDO
         Dim QUERYIDCLIENTE As String = "SELECT IDCLIENTE FROM PEDIDOS WHERE IDPEDIDO = @IDPEDIDO ;"
-        Dim IDCLIENTE As String
+        Dim IDCLIENTE As String = ""
         Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
             Dim Command As New SQLiteCommand(QUERYIDCLIENTE, MiConexion)
             Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
@@ -410,87 +428,88 @@ Public Module ControladorDatos
 
         'ID DEL TRABAJADOR QUE REALIZO EL PEDIDO
         Dim QUERYIDTRABAJADOR As String = "SELECT IDTRABAJADOR FROM PEDIDOS WHERE IDPEDIDO  = @IDPEDIDO;"
-        Dim IDTRABAJADOR As String
-        Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
-            Dim Command As New SQLiteCommand(QUERYIDTRABAJADOR, MiConexion)
-            Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
-            MiConexion.Open()
-            Dim Adapter As New SQLiteDataAdapter(Command)
-            Dim Table As New DataTable()
-            Adapter.Fill(Table)
-            IDTRABAJADOR = Table.Rows(0)(0).ToString()
-        End Using
+            Dim IDTRABAJADOR As String
+            Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
+                Dim Command As New SQLiteCommand(QUERYIDTRABAJADOR, MiConexion)
+                Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
+                MiConexion.Open()
+                Dim Adapter As New SQLiteDataAdapter(Command)
+                Dim Table As New DataTable()
+                Adapter.Fill(Table)
+                IDTRABAJADOR = Table.Rows(0)(0).ToString()
+            End Using
 
-        'NOMBRE DEL CLIENTE QUE REALIZO EL PEDIDO
-        Dim QUERYNombreCliente As String = "SELECT NOMBRECOMPLETO FROM CLIENTES WHERE IDCLIENTE = @IDCLIENTE;"
-        Dim NombreCliente As String
-        Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
-            Dim Command As New SQLiteCommand(QUERYNombreCliente, MiConexion)
-            Command.Parameters.AddWithValue("@IDCLIENTE", IDCLIENTE)
-            MiConexion.Open()
-            Dim Adapter As New SQLiteDataAdapter(Command)
-            Dim Table As New DataTable()
-            Adapter.Fill(Table)
-            NombreCliente = Table.Rows(0)(0).ToString()
-        End Using
+            'NOMBRE DEL CLIENTE QUE REALIZO EL PEDIDO
+            Dim QUERYNombreCliente As String = "SELECT NOMBRECOMPLETO FROM CLIENTES WHERE IDCLIENTE = @IDCLIENTE;"
+            Dim NombreCliente As String
+            Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
+                Dim Command As New SQLiteCommand(QUERYNombreCliente, MiConexion)
+                Command.Parameters.AddWithValue("@IDCLIENTE", IDCLIENTE)
+                MiConexion.Open()
+                Dim Adapter As New SQLiteDataAdapter(Command)
+                Dim Table As New DataTable()
+                Adapter.Fill(Table)
+                NombreCliente = Table.Rows(0)(0).ToString()
+            End Using
 
-        'DIRECCION DEL CLIENTE QUE REALIZO EL PEDIDO
-        Dim QUERYDireccionCliente As String = "SELECT DIRECCION FROM CLIENTES WHERE IDCLIENTE = @IDCLIENTE"
-        Dim DireccionCliente As String
-        Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
-            Dim Command As New SQLiteCommand(QUERYDireccionCliente, MiConexion)
-            Command.Parameters.AddWithValue("@IDCLIENTE", IDCLIENTE)
-            MiConexion.Open()
-            Dim Adapter As New SQLiteDataAdapter(Command)
-            Dim Table As New DataTable()
-            Adapter.Fill(Table)
-            DireccionCliente = Table.Rows(0)(0).ToString()
-        End Using
+            'DIRECCION DEL CLIENTE QUE REALIZO EL PEDIDO
+            Dim QUERYDireccionCliente As String = "SELECT DIRECCION FROM CLIENTES WHERE IDCLIENTE = @IDCLIENTE"
+            Dim DireccionCliente As String
+            Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
+                Dim Command As New SQLiteCommand(QUERYDireccionCliente, MiConexion)
+                Command.Parameters.AddWithValue("@IDCLIENTE", IDCLIENTE)
+                MiConexion.Open()
+                Dim Adapter As New SQLiteDataAdapter(Command)
+                Dim Table As New DataTable()
+                Adapter.Fill(Table)
+                DireccionCliente = Table.Rows(0)(0).ToString()
+            End Using
 
-        'NOMBRE DEL TRABAJADOR QUE REALIZO EL TRABAJO
-        Dim QUERYNombreTrabajador As String = "SELECT NOMBRECOMPLETO FROM TRABAJADORES WHERE IDTRABAJADOR = @IDTRABAJADOR;"
-        Dim NombreTrabajador As String
-        Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
-            Dim Command As New SQLiteCommand(QUERYNombreTrabajador, MiConexion)
-            Command.Parameters.AddWithValue("@IDTRABAJADOR", IDTRABAJADOR)
-            MiConexion.Open()
-            Dim Adapter As New SQLiteDataAdapter(Command)
-            Dim Table As New DataTable()
-            Adapter.Fill(Table)
-            NombreTrabajador = Table.Rows(0)(0).ToString()
-        End Using
+            'NOMBRE DEL TRABAJADOR QUE REALIZO EL TRABAJO
+            Dim QUERYNombreTrabajador As String = "SELECT NOMBRECOMPLETO FROM TRABAJADORES WHERE IDTRABAJADOR = @IDTRABAJADOR;"
+            Dim NombreTrabajador As String
+            Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
+                Dim Command As New SQLiteCommand(QUERYNombreTrabajador, MiConexion)
+                Command.Parameters.AddWithValue("@IDTRABAJADOR", IDTRABAJADOR)
+                MiConexion.Open()
+                Dim Adapter As New SQLiteDataAdapter(Command)
+                Dim Table As New DataTable()
+                Adapter.Fill(Table)
+                NombreTrabajador = Table.Rows(0)(0).ToString()
+            End Using
 
-        'CANTIDAD TOTAL EN EUROS DEL PEDIDO INTRODUCIDO
-        Dim QUERYTotalEUROS As String = "SELECT SUM(CANTIDAD*PRECIOUNIDAD) AS TOTAL FROM LINEASPEDIDOS WHERE IDPEDIDO = @IDPEDIDO;"
-        Dim TotalEuros As String
-        Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
-            Dim Command As New SQLiteCommand(QUERYTotalEUROS, MiConexion)
-            Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
-            MiConexion.Open()
-            Dim Adapter As New SQLiteDataAdapter(Command)
-            Dim Table As New DataTable()
-            Adapter.Fill(Table)
-            TotalEuros = Table.Rows(0)(0).ToString()
-        End Using
+            'CANTIDAD TOTAL EN EUROS DEL PEDIDO INTRODUCIDO
+            Dim QUERYTotalEUROS As String = "SELECT SUM(CANTIDAD*PRECIOUNIDAD) AS TOTAL FROM LINEASPEDIDOS WHERE IDPEDIDO = @IDPEDIDO;"
+            Dim TotalEuros As String
+            Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
+                Dim Command As New SQLiteCommand(QUERYTotalEUROS, MiConexion)
+                Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
+                MiConexion.Open()
+                Dim Adapter As New SQLiteDataAdapter(Command)
+                Dim Table As New DataTable()
+                Adapter.Fill(Table)
+                TotalEuros = Table.Rows(0)(0).ToString()
+            End Using
 
-        'LEEMOS TODAS LAS LINEAS DE PEDIDO
-        Dim LINEACOMPLETA As String = ""
-        Dim QUERYLineas As String = "SELECT IDPRODUCTO,CANTIDAD,PRECIOUNIDAD,(CANTIDAD*PRECIOUNIDAD) AS Total FROM LINEASPEDIDOS WHERE IDPEDIDO  = @IDPEDIDO ;"
+            'LEEMOS TODAS LAS LINEAS DE PEDIDO
+            Dim LINEACOMPLETA As String = ""
+        Dim QUERYLineas As String = "SELECT IDPRODUCTO,CANTIDAD,PRECIOUNIDAD,SERVICIO,(CANTIDAD*PRECIOUNIDAD) AS Total FROM LINEASPEDIDOS WHERE IDPEDIDO  = @IDPEDIDO ;"
         Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
-            Dim Command As New SQLiteCommand(QUERYLineas, MiConexion)
-            Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
-            MiConexion.Open()
-            Dim Adapter As New SQLiteDataAdapter(Command)
-            Dim Table As New DataTable()
-            Adapter.Fill(Table)
-            For Each row As DataRow In Table.Rows
-                For Each column As DataColumn In Table.Columns
-                    LINEACOMPLETA = LINEACOMPLETA & "          " & row(column) & " "
+                Dim Command As New SQLiteCommand(QUERYLineas, MiConexion)
+                Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
+                MiConexion.Open()
+                Dim Adapter As New SQLiteDataAdapter(Command)
+                Dim Table As New DataTable()
+                Adapter.Fill(Table)
+                For Each row As DataRow In Table.Rows
+                    For Each column As DataColumn In Table.Columns
+                        LINEACOMPLETA = LINEACOMPLETA & "          " & row(column) & " "
+                    Next
+                    LINEACOMPLETA = LINEACOMPLETA & vbNewLine & vbNewLine
                 Next
-                LINEACOMPLETA = LINEACOMPLETA & vbNewLine & vbNewLine
-            Next
 
-        End Using
+            End Using
+
         Try
             Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
 
@@ -509,7 +528,7 @@ Public Module ControladorDatos
                                  "Id del Trabajador: " & IDTRABAJADOR & vbNewLine & vbNewLine &
                                  "Atendido por: " & NombreTrabajador & vbNewLine & vbNewLine &
                                  "                          Datos del Pedido                    " & vbNewLine & vbNewLine &
-                                 "         IDPRODUCTO        " & "CANTIDAD       " & "PRECIO     " & "SUBTOTAL" & vbNewLine &
+                                 "         IDPRODUCTO        " & "CANTIDAD       " & "PRECIO     " & "SERVICIO    " & "SUBTOTAL" & vbNewLine &
                                  LINEACOMPLETA & vbNewLine & vbNewLine &
                                  "Total A Pagar: " & TotalEuros & " Euros" & vbNewLine & vbNewLine)
 
@@ -519,7 +538,21 @@ Public Module ControladorDatos
                 Else
                     My.Computer.FileSystem.CreateDirectory("C:\Facturas")
                     Using Factura As New StreamWriter("C:\Facturas\Facturas.txt", True)
-                        Dim Hacer As String = "COPIAR LO DE ARRIBA CUANDO TERMINE"
+                        Factura.Write("----------------------------------------------------------------------" & vbNewLine & vbNewLine &
+                             "                   Datos de la Factura               " & vbNewLine & vbNewLine &
+                             "Factura con IDPedido: " & IDPEDIDO & vbNewLine & vbNewLine &
+                             "Fecha de Facturación: " & Fecha & vbNewLine & vbNewLine &
+                             "                 Datos Del Cliente               " & vbNewLine & vbNewLine &
+                             "Nombre del Cliente: " & NombreCliente & vbNewLine & vbNewLine &
+                             "Direccion del Cliente: " & DireccionCliente & vbNewLine & vbNewLine &
+                             "                    Datos del Trabajador                    " & vbNewLine & vbNewLine &
+                             "Id del Trabajador: " & IDTRABAJADOR & vbNewLine & vbNewLine &
+                             "Atendido por: " & NombreTrabajador & vbNewLine & vbNewLine &
+                             "                          Datos del Pedido                    " & vbNewLine & vbNewLine &
+                             "         IDPRODUCTO        " & "CANTIDAD       " & "PRECIO     " & "SERVICIO    " & "SUBTOTAL" & vbNewLine &
+                             LINEACOMPLETA & vbNewLine & vbNewLine &
+                             "Total A Pagar: " & TotalEuros & " Euros" & vbNewLine & vbNewLine)
+
                         MsgBox("Factura Realizada Correctamente en: C:\Facturas\Facturas.txt")
                     End Using
                 End If

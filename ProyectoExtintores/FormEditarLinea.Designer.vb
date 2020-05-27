@@ -35,6 +35,8 @@ Partial Class FormEditarLinea
         Me.TextboxIdAlmacen = New System.Windows.Forms.TextBox()
         Me.TextboxIdExtintor = New System.Windows.Forms.TextBox()
         Me.botonEditarAlmacen = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Label2
@@ -150,7 +152,7 @@ Partial Class FormEditarLinea
         Me.botonEditarAlmacen.ForeColor = System.Drawing.Color.White
         Me.botonEditarAlmacen.Image = Global.ProyectoExtintores.My.Resources.Resources.iconoeditar
         Me.botonEditarAlmacen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.botonEditarAlmacen.Location = New System.Drawing.Point(83, 315)
+        Me.botonEditarAlmacen.Location = New System.Drawing.Point(83, 354)
         Me.botonEditarAlmacen.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.botonEditarAlmacen.Name = "botonEditarAlmacen"
         Me.botonEditarAlmacen.Size = New System.Drawing.Size(110, 41)
@@ -159,12 +161,33 @@ Partial Class FormEditarLinea
         Me.botonEditarAlmacen.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.botonEditarAlmacen.UseVisualStyleBackColor = False
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(29, 318)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(50, 16)
+        Me.Label4.TabIndex = 43
+        Me.Label4.Text = "Servicio"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(97, 316)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(138, 20)
+        Me.TextBox3.TabIndex = 44
+        '
         'FormEditarLinea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(281, 382)
+        Me.ClientSize = New System.Drawing.Size(281, 408)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.botonEditarAlmacen)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label3)
@@ -179,9 +202,7 @@ Partial Class FormEditarLinea
         Me.Controls.Add(Me.TextboxIdExtintor)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(297, 421)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(297, 421)
         Me.Name = "FormEditarLinea"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar Linea Pedido"
@@ -202,4 +223,6 @@ Partial Class FormEditarLinea
     Friend WithEvents TextboxIdAlmacen As TextBox
     Friend WithEvents TextboxIdExtintor As TextBox
     Friend WithEvents botonEditarAlmacen As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TextBox3 As TextBox
 End Class

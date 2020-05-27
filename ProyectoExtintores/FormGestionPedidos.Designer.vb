@@ -27,6 +27,7 @@ Partial Class FormGestionPedidos
         Me.Button1 = New System.Windows.Forms.Button()
         Me.LabelMenuPrincipal = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'botonFacturas
@@ -48,7 +49,7 @@ Partial Class FormGestionPedidos
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(270, 137)
+        Me.Button1.Location = New System.Drawing.Point(258, 137)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(174, 153)
         Me.Button1.TabIndex = 7
@@ -61,7 +62,7 @@ Partial Class FormGestionPedidos
         Me.LabelMenuPrincipal.BackColor = System.Drawing.Color.White
         Me.LabelMenuPrincipal.Font = New System.Drawing.Font("Century Gothic", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelMenuPrincipal.ForeColor = System.Drawing.Color.Black
-        Me.LabelMenuPrincipal.Location = New System.Drawing.Point(146, 29)
+        Me.LabelMenuPrincipal.Location = New System.Drawing.Point(241, 27)
         Me.LabelMenuPrincipal.Name = "LabelMenuPrincipal"
         Me.LabelMenuPrincipal.Size = New System.Drawing.Size(401, 42)
         Me.LabelMenuPrincipal.TabIndex = 8
@@ -73,19 +74,33 @@ Partial Class FormGestionPedidos
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(499, 137)
+        Me.Button2.Location = New System.Drawing.Point(479, 137)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(174, 153)
         Me.Button2.TabIndex = 9
         Me.Button2.Text = "Crear Factura"
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.Black
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(691, 137)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(174, 153)
+        Me.Button3.TabIndex = 10
+        Me.Button3.Text = "Abrir Factura"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
         'FormGestionPedidos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(741, 343)
+        Me.ClientSize = New System.Drawing.Size(889, 315)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.LabelMenuPrincipal)
         Me.Controls.Add(Me.Button1)
@@ -103,4 +118,5 @@ Partial Class FormGestionPedidos
     Friend WithEvents Button1 As Button
     Friend WithEvents LabelMenuPrincipal As Label
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class

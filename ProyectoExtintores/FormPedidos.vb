@@ -8,7 +8,7 @@ Public Class FormPedidos
     End Sub
 
     Private Sub FormPedidos_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        FormMenuPrincipal.Show()
+        FormGestionPedidos.Show()
     End Sub
     Private Sub BotonVerDatos_Click(sender As Object, e As EventArgs) Handles botonVerDatos.Click
 
@@ -42,4 +42,5 @@ Public Class FormPedidos
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         TablaPedidosxLineas.Refresh()
     End Sub
+
 End Class

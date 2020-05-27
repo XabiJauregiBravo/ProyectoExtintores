@@ -78,12 +78,13 @@ CREATE TABLE ALMACENES (
             CANTIDAD int NOT NULL,
             PRECIOUNIDAD int NOT NULL,
             IDPEDIDO varchar(10) NOT NULL REFERENCES PEDIDOS (IDPEDIDO),
-            IDPRODUCTO varchar(10) NOT NULL REFERENCES PRODUCTOS (IDPRODUCTO)
+            IDPRODUCTO varchar(10) NOT NULL REFERENCES PRODUCTOS (IDPRODUCTO),
+            SERVICIO varchar(3) NOT NULL
             );
 
-            INSERT INTO LINEASPEDIDOS(IDLINEAS,CANTIDAD,PRECIOUNIDAD,IDPEDIDO,IDPRODUCTO) VALUES
-            ('LIN001',30,6,'PED001','EXTPOLVO'),
-            ('LIN002',23,6,'PED002','EXTCO2');"
+            INSERT INTO LINEASPEDIDOS(IDLINEAS,CANTIDAD,PRECIOUNIDAD,IDPEDIDO,IDPRODUCTO,SERVICIO) VALUES
+            ('LIN001',30,6,'PED001','EXTPOLVO','REV'),
+            ('LIN002',23,6,'PED002','EXTCO2','VEN');"
 
     Public ConexionString As String = "Data Source=C:\database\ProyectoBBDDExtintores.db;Version=3"
     Public RutaDb = "C:\database\ProyectoBBDDExtintores.db"

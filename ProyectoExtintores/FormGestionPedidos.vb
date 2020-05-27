@@ -1,4 +1,5 @@
-﻿Public Class FormGestionPedidos
+﻿Imports System.IO
+Public Class FormGestionPedidos
     Private Sub BotonFacturas_Click(sender As Object, e As EventArgs) Handles botonFacturas.Click
         FormPedidos.Show()
         FormInicial.Hide()
@@ -19,5 +20,9 @@
 
     Private Sub FormGestionPedidos_Load(sender As Object, e As EventArgs) Handles MyBase.Closing
         FormMenuPrincipal.Show()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Process.Start("C:\Facturas\Facturas.txt")
     End Sub
 End Class

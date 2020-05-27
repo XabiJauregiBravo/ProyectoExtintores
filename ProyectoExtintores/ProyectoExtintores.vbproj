@@ -360,6 +360,9 @@
   <ItemGroup>
     <None Include="Resources\iconoeliminar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Documentacion\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
