@@ -31,6 +31,7 @@ Partial Class FormEditarAlmacen
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxCiudad = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'botonEditarAlmacen
@@ -117,12 +118,24 @@ Partial Class FormEditarAlmacen
         Me.Label2.TabIndex = 41
         Me.Label2.Text = "Ciudad"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(93, 72)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(131, 15)
+        Me.Label3.TabIndex = 44
+        Me.Label3.Text = "Introduce un ID que ya exista:"
+        '
         'FormEditarAlmacen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(281, 239)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBoxCiudad)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.botonEditarAlmacen)
@@ -152,4 +165,5 @@ Partial Class FormEditarAlmacen
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBoxCiudad As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 End Class

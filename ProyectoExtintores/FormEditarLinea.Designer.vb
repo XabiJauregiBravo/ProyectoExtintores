@@ -37,6 +37,7 @@ Partial Class FormEditarLinea
         Me.botonEditarAlmacen = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label2
@@ -180,12 +181,24 @@ Partial Class FormEditarLinea
         Me.TextBox3.Size = New System.Drawing.Size(138, 20)
         Me.TextBox3.TabIndex = 44
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Red
+        Me.Label5.Location = New System.Drawing.Point(94, 92)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(131, 15)
+        Me.Label5.TabIndex = 45
+        Me.Label5.Text = "Introduce un ID que ya exista:"
+        '
         'FormEditarLinea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(281, 408)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.botonEditarAlmacen)
@@ -227,4 +240,5 @@ Partial Class FormEditarLinea
     Friend WithEvents botonEditarAlmacen As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label5 As Label
 End Class

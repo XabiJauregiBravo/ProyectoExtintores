@@ -23,6 +23,10 @@ Public Class FormGestionPedidos
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Process.Start("C:\Facturas\Facturas.txt")
+        Try
+            Process.Start("C:\Facturas\Facturas.txt")
+        Catch ex As System.ComponentModel.Win32Exception
+            MsgBox("NO HA CREADO NINGUNA FACTURA AÚN", MsgBoxStyle.Critical)
+        End Try
     End Sub
 End Class

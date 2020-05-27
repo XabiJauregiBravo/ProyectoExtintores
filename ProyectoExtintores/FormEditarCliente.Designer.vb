@@ -31,6 +31,7 @@ Partial Class FormEditarCliente
         Me.TextboxNombreCompleto = New System.Windows.Forms.TextBox()
         Me.TextboxIdCliente = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'TextBoxDireccion
@@ -117,11 +118,23 @@ Partial Class FormEditarCliente
         Me.Label1.TabIndex = 43
         Me.Label1.Text = "Editar Cliente"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(98, 56)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(131, 15)
+        Me.Label3.TabIndex = 51
+        Me.Label3.Text = "Introduce un ID que ya exista:"
+        '
         'FormEditarCliente
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(281, 239)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBoxDireccion)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.botonEditarCliente)
@@ -151,4 +164,5 @@ Partial Class FormEditarCliente
     Friend WithEvents TextboxNombreCompleto As TextBox
     Friend WithEvents TextboxIdCliente As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
 End Class

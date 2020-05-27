@@ -31,6 +31,7 @@ Partial Class FormEditarTrabajador
         Me.TextboxIdRevisorEditarRevisor = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxDNIEditarRevisor = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'BotonEditar
@@ -117,12 +118,24 @@ Partial Class FormEditarTrabajador
         Me.TextBoxDNIEditarRevisor.Size = New System.Drawing.Size(144, 20)
         Me.TextBoxDNIEditarRevisor.TabIndex = 41
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Red
+        Me.Label2.Location = New System.Drawing.Point(102, 82)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(131, 15)
+        Me.Label2.TabIndex = 42
+        Me.Label2.Text = "Introduce un ID que ya exista:"
+        '
         'FormEditarTrabajador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(281, 300)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBoxDNIEditarRevisor)
         Me.Controls.Add(Me.BotonEditar)
         Me.Controls.Add(Me.lblDNI)
@@ -152,4 +165,5 @@ Partial Class FormEditarTrabajador
     Friend WithEvents TextboxIdRevisorEditarRevisor As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBoxDNIEditarRevisor As TextBox
+    Friend WithEvents Label2 As Label
 End Class

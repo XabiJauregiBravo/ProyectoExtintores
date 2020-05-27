@@ -33,6 +33,7 @@ Partial Class FormEditarProveedor
         Me.TextboxNombreComercialEditarProveedor = New System.Windows.Forms.TextBox()
         Me.TextboxIdProveedorEditarProveedor = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'botonEditarProveedor
@@ -138,11 +139,23 @@ Partial Class FormEditarProveedor
         Me.Label1.TabIndex = 21
         Me.Label1.Text = "Editar Proveedor"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(109, 61)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(131, 15)
+        Me.Label3.TabIndex = 43
+        Me.Label3.Text = "Introduce un ID que ya exista:"
+        '
         'FormEditarProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(281, 300)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.botonEditarProveedor)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextboxTelefonoEditarProveedor)
@@ -176,4 +189,5 @@ Partial Class FormEditarProveedor
     Friend WithEvents TextboxNombreComercialEditarProveedor As TextBox
     Friend WithEvents TextboxIdProveedorEditarProveedor As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
 End Class
