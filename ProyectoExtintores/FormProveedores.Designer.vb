@@ -165,7 +165,7 @@ Partial Class FormProveedores
         Me.Controls.Add(Me.TablaProveedores)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(825, 2000)
+        Me.MaximumSize = New System.Drawing.Size(825, 584)
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(825, 584)
         Me.Name = "FormProveedores"

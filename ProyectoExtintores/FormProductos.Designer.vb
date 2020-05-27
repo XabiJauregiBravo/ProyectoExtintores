@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormInventarioProductos
+Partial Class FormProductos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -26,7 +26,7 @@ Partial Class FormInventarioProductos
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormInventarioProductos))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormProductos))
         Me.botonEliminar = New System.Windows.Forms.Button()
         Me.botonEditar = New System.Windows.Forms.Button()
         Me.botonAñadir = New System.Windows.Forms.Button()
@@ -152,7 +152,7 @@ Partial Class FormInventarioProductos
         Me.TablaExtintores.Size = New System.Drawing.Size(611, 546)
         Me.TablaExtintores.TabIndex = 9
         '
-        'FormInventarioProductos
+        'FormProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -164,9 +164,10 @@ Partial Class FormInventarioProductos
         Me.Controls.Add(Me.botonVerDatos)
         Me.Controls.Add(Me.TablaExtintores)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximumSize = New System.Drawing.Size(825, 2000)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(825, 584)
         Me.MinimumSize = New System.Drawing.Size(825, 584)
-        Me.Name = "FormInventarioProductos"
+        Me.Name = "FormProductos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inventario Productos"
         CType(Me.TablaExtintores, System.ComponentModel.ISupportInitialize).EndInit()

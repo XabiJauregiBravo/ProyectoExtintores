@@ -159,6 +159,7 @@ Partial Class FormEditarProveedor
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(297, 339)
         Me.Name = "FormEditarProveedor"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar Proveedor"
         Me.ResumeLayout(False)
         Me.PerformLayout()

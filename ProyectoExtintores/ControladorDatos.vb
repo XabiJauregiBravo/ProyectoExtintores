@@ -32,6 +32,9 @@ Public Module ControladorDatos
             Catch ex As System.FormatException
                 MsgBox("Los valores son incorrectos", MsgBoxStyle.Exclamation)
                 Return False
+            Catch ex As System.Data.ConstraintException
+                MsgBox("Los valores son incorrectos", MsgBoxStyle.Exclamation)
+                Return False
             End Try
             datareader.Close()
             MiConexion.Close()

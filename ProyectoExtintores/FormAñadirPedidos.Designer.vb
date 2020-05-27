@@ -139,7 +139,9 @@ Partial Class FormAñadirPedidos
         Me.Controls.Add(Me.Label2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(353, 338)
         Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(353, 338)
         Me.Name = "FormAñadirPedidos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormAñadirPedidos"

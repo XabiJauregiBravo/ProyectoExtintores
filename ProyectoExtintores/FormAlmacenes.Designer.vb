@@ -41,7 +41,7 @@ Partial Class FormAlmacenes
         Me.botonVerDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.botonVerDatos.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.botonVerDatos.ForeColor = System.Drawing.Color.White
-
+        Me.botonVerDatos.Image = Global.ProyectoExtintores.My.Resources.Resources.actualizaricono
         Me.botonVerDatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.botonVerDatos.Location = New System.Drawing.Point(631, 33)
         Me.botonVerDatos.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -107,7 +107,7 @@ Partial Class FormAlmacenes
         Me.botonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.botonEliminar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.botonEliminar.ForeColor = System.Drawing.Color.White
-
+        Me.botonEliminar.Image = Global.ProyectoExtintores.My.Resources.Resources.iconoeliminar
         Me.botonEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.botonEliminar.Location = New System.Drawing.Point(631, 419)
         Me.botonEliminar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -124,6 +124,7 @@ Partial Class FormAlmacenes
         Me.botonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.botonEditar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.botonEditar.ForeColor = System.Drawing.Color.White
+        Me.botonEditar.Image = Global.ProyectoExtintores.My.Resources.Resources.iconoeditar
         Me.botonEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.botonEditar.Location = New System.Drawing.Point(631, 298)
         Me.botonEditar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -140,6 +141,7 @@ Partial Class FormAlmacenes
         Me.botonAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.botonAñadir.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.botonAñadir.ForeColor = System.Drawing.Color.White
+        Me.botonAñadir.Image = Global.ProyectoExtintores.My.Resources.Resources.iconoañadir
         Me.botonAñadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.botonAñadir.Location = New System.Drawing.Point(631, 156)
         Me.botonAñadir.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)

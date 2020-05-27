@@ -164,7 +164,8 @@ Partial Class FormClientes
         Me.Controls.Add(Me.TablaClientes)
         Me.Controls.Add(Me.botonVerDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximumSize = New System.Drawing.Size(825, 2000)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(825, 584)
         Me.MinimumSize = New System.Drawing.Size(825, 584)
         Me.Name = "FormClientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

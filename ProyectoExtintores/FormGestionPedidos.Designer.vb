@@ -106,6 +106,10 @@ Partial Class FormGestionPedidos
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.botonFacturas)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(905, 354)
+        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(905, 354)
         Me.Name = "FormGestionPedidos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestión Pedidos"

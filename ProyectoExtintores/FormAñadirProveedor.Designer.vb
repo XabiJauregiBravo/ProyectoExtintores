@@ -129,7 +129,7 @@ Partial Class FormAñadirProveedor
         Me.botonAñadir.ForeColor = System.Drawing.Color.White
         Me.botonAñadir.Image = Global.ProyectoExtintores.My.Resources.Resources.iconoañadir
         Me.botonAñadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.botonAñadir.Location = New System.Drawing.Point(79, 237)
+        Me.botonAñadir.Location = New System.Drawing.Point(63, 246)
         Me.botonAñadir.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.botonAñadir.Name = "botonAñadir"
         Me.botonAñadir.Size = New System.Drawing.Size(139, 41)
@@ -158,7 +158,9 @@ Partial Class FormAñadirProveedor
         Me.ForeColor = System.Drawing.Color.Black
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(297, 339)
+        Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(297, 339)
         Me.Name = "FormAñadirProveedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

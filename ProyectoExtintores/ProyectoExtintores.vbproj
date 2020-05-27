@@ -203,10 +203,10 @@
       <DependentUpon>FormInicial.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInventarioProductos.Designer.vb">
-      <DependentUpon>FormInventarioProductos.vb</DependentUpon>
+    <Compile Include="FormProductos.Designer.vb">
+      <DependentUpon>FormProductos.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormInventarioProductos.vb">
+    <Compile Include="FormProductos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLineas.Designer.vb">
@@ -310,8 +310,8 @@
     <EmbeddedResource Include="FormInicial.resx">
       <DependentUpon>FormInicial.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInventarioProductos.resx">
-      <DependentUpon>FormInventarioProductos.vb</DependentUpon>
+    <EmbeddedResource Include="FormProductos.resx">
+      <DependentUpon>FormProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLineas.resx">
       <DependentUpon>FormLineas.vb</DependentUpon>

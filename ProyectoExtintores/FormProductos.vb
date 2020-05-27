@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SQLite
 
-Public Class FormInventarioProductos
+Public Class FormProductos
     Private Sub FormInventarioExtintores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim dt = ControladorDatos.VerTabla("PRODUCTOS")

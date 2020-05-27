@@ -68,7 +68,7 @@ Partial Class FormMenuPrincipal
         Me.botonRevisores.Name = "botonRevisores"
         Me.botonRevisores.Size = New System.Drawing.Size(237, 175)
         Me.botonRevisores.TabIndex = 2
-        Me.botonRevisores.Text = "Revisores"
+        Me.botonRevisores.Text = "Trabajadores"
         Me.botonRevisores.UseVisualStyleBackColor = False
         '
         'BotonInvExtintores

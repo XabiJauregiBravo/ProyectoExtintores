@@ -164,10 +164,12 @@ Partial Class FormTrabajadores
         Me.Controls.Add(Me.TablaTrabajadores)
         Me.Controls.Add(Me.botonVerDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(825, 584)
         Me.MinimumSize = New System.Drawing.Size(825, 584)
         Me.Name = "FormTrabajadores"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Gestión Revisores"
+        Me.Text = "Gestión Trabajadores"
         CType(Me.TablaTrabajadores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

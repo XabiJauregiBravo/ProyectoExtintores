@@ -23,7 +23,7 @@
     End Sub
 
     Private Sub BotonInvExtintores_Click(sender As Object, e As EventArgs) Handles BotonInvExtintores.Click
-        FormInventarioProductos.Show()
+        FormProductos.Show()
         FormInicial.Hide()
         Me.Hide()
     End Sub

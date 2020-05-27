@@ -202,7 +202,9 @@ Partial Class FormEditarLinea
         Me.Controls.Add(Me.TextboxIdExtintor)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(297, 447)
         Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(297, 447)
         Me.Name = "FormEditarLinea"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar Linea Pedido"

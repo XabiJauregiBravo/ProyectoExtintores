@@ -35,7 +35,6 @@ C:\Users\xabie\source\repos\ProyectoExtintores\ProyectoExtintores\obj\Debug\Proy
 C:\Users\xabie\source\repos\ProyectoExtintores\ProyectoExtintores\obj\Debug\ProyectoExtintores.FormEditarPedido.resources
 C:\Users\xabie\source\repos\ProyectoExtintores\ProyectoExtintores\obj\Debug\ProyectoExtintores.FormAñadirProducto.resources
 C:\Users\xabie\source\repos\ProyectoExtintores\ProyectoExtintores\obj\Debug\ProyectoExtintores.FormEditarProducto.resources
-C:\Users\xabie\source\repos\ProyectoExtintores\ProyectoExtintores\obj\Debug\ProyectoExtintores.FormInventarioProductos.resources
 C:\Users\xabie\source\repos\ProyectoExtintores\ProyectoExtintores\obj\Debug\ProyectoExtintores.FormGestionPedidos.resources
 C:\Users\xabie\source\repos\ProyectoExtintores\ProyectoExtintores\obj\Debug\ProyectoExtintores.FormLineas.resources
 C:\Users\xabie\source\repos\ProyectoExtintores\ProyectoExtintores\obj\Debug\ProyectoExtintores.FormAñadirLineaPedido.resources
@@ -43,3 +42,4 @@ C:\Users\xabie\source\repos\ProyectoExtintores\ProyectoExtintores\obj\Debug\Proy
 C:\Users\xabie\source\repos\ProyectoExtintores\ProyectoExtintores\obj\Debug\ProyectoExtintores.FormAñadirTrabajador.resources
 C:\Users\xabie\source\repos\ProyectoExtintores\ProyectoExtintores\obj\Debug\ProyectoExtintores.FormEditarTrabajador.resources
 C:\Users\xabie\source\repos\ProyectoExtintores\ProyectoExtintores\obj\Debug\ProyectoExtintores.FormTrabajadores.resources
+C:\Users\xabie\source\repos\ProyectoExtintores\ProyectoExtintores\obj\Debug\ProyectoExtintores.FormProductos.resources
