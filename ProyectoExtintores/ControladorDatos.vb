@@ -17,11 +17,11 @@ Public Module ControladorDatos
         Try
             MiConexion.Open()
         Catch ex As SQLiteException
-            MsgBox("La base de datos no es valida o no existe", MsgBoxStyle.Exclamation)
+            MsgBox("La base de datos no es valida o no existe", MsgBoxStyle.Critical)
             Return False
         End Try
         Try
-            Dim Comando As New SQLiteCommand()
+            Dim Comando As New SQLiteCommand
             Comando.Connection = MiConexion
             Comando.CommandText = "SELECT * FROM " & tabla
             Dim datareader As SQLiteDataReader
@@ -30,17 +30,17 @@ Public Module ControladorDatos
             Try
                 datatable.Load(datareader)
             Catch ex As System.FormatException
-                MsgBox("Los valores son incorrectos", MsgBoxStyle.Exclamation)
+                MsgBox("Los valores son incorrectos", MsgBoxStyle.Critical)
                 Return False
             Catch ex As System.Data.ConstraintException
-                MsgBox("Los valores son incorrectos", MsgBoxStyle.Exclamation)
+                MsgBox("Los valores son incorrectos", MsgBoxStyle.Critical)
                 Return False
             End Try
             datareader.Close()
             MiConexion.Close()
             Return datatable
         Catch ex As SQLiteException
-            MsgBox("El nombre de tabla incorrecto", MsgBoxStyle.Exclamation)
+            MsgBox("El nombre de tabla incorrecto", MsgBoxStyle.Critical)
             Return False
         End Try
     End Function
@@ -56,7 +56,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -90,7 +90,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -108,7 +108,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -123,7 +123,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -140,7 +140,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -157,7 +157,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -172,7 +172,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
     Public Sub UpdateTrabajador(IDTRABAJADOR As String, NOMBRECOMPLETO As String, DNI As String)
@@ -187,7 +187,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -205,7 +205,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -220,7 +220,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -237,7 +237,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -255,7 +255,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -270,7 +270,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -286,7 +286,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -303,7 +303,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
     Public Sub UpdatePedido(IDPEDIDO As String, DIRECCION As String, IDTRABAJADOR As String, IDCLIENTE As String)
@@ -319,7 +319,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -338,7 +338,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -354,7 +354,7 @@ Public Module ControladorDatos
 
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -374,7 +374,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -395,7 +395,7 @@ Public Module ControladorDatos
                 Command.ExecuteNonQuery()
             End Using
         Catch Ex As SQLiteException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            MsgBox("ERROR", MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -415,22 +415,22 @@ Public Module ControladorDatos
     End Function
 
     Public Sub Facturar(IDPEDIDO As String)
+        Try
+            'ID DEL CLIENTE QUE REALIZO EL PEDIDO
+            Dim QUERYIDCLIENTE As String = "SELECT IDCLIENTE FROM PEDIDOS WHERE IDPEDIDO = @IDPEDIDO ;"
+            Dim IDCLIENTE As String = ""
+            Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
+                Dim Command As New SQLiteCommand(QUERYIDCLIENTE, MiConexion)
+                Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
+                MiConexion.Open()
+                Dim Adapter As New SQLiteDataAdapter(Command)
+                Dim Table As New DataTable()
+                Adapter.Fill(Table)
+                IDCLIENTE = Table.Rows(0)(0).ToString()
+            End Using
 
-        'ID DEL CLIENTE QUE REALIZO EL PEDIDO
-        Dim QUERYIDCLIENTE As String = "SELECT IDCLIENTE FROM PEDIDOS WHERE IDPEDIDO = @IDPEDIDO ;"
-        Dim IDCLIENTE As String = ""
-        Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
-            Dim Command As New SQLiteCommand(QUERYIDCLIENTE, MiConexion)
-            Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
-            MiConexion.Open()
-            Dim Adapter As New SQLiteDataAdapter(Command)
-            Dim Table As New DataTable()
-            Adapter.Fill(Table)
-            IDCLIENTE = Table.Rows(0)(0).ToString()
-        End Using
-
-        'ID DEL TRABAJADOR QUE REALIZO EL PEDIDO
-        Dim QUERYIDTRABAJADOR As String = "SELECT IDTRABAJADOR FROM PEDIDOS WHERE IDPEDIDO  = @IDPEDIDO;"
+            'ID DEL TRABAJADOR QUE REALIZO EL PEDIDO
+            Dim QUERYIDTRABAJADOR As String = "SELECT IDTRABAJADOR FROM PEDIDOS WHERE IDPEDIDO  = @IDPEDIDO;"
             Dim IDTRABAJADOR As String
             Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
                 Dim Command As New SQLiteCommand(QUERYIDTRABAJADOR, MiConexion)
@@ -496,8 +496,8 @@ Public Module ControladorDatos
 
             'LEEMOS TODAS LAS LINEAS DE PEDIDO
             Dim LINEACOMPLETA As String = ""
-        Dim QUERYLineas As String = "SELECT IDPRODUCTO,CANTIDAD,PRECIOUNIDAD,SERVICIO,(CANTIDAD*PRECIOUNIDAD) AS Total FROM LINEASPEDIDOS WHERE IDPEDIDO  = @IDPEDIDO ;"
-        Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
+            Dim QUERYLineas As String = "SELECT IDPRODUCTO,CANTIDAD,PRECIOUNIDAD,SERVICIO,(CANTIDAD*PRECIOUNIDAD) AS Total FROM LINEASPEDIDOS WHERE IDPEDIDO  = @IDPEDIDO ;"
+            Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
                 Dim Command As New SQLiteCommand(QUERYLineas, MiConexion)
                 Command.Parameters.AddWithValue("@IDPEDIDO", IDPEDIDO)
                 MiConexion.Open()
@@ -513,14 +513,35 @@ Public Module ControladorDatos
 
             End Using
 
-        Try
-            Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
+            Try
+                Using MiConexion As New SQLiteConnection(ControladorDatos.ConexionString)
 
-                Dim Fecha As String = DateTime.Now.ToShortDateString()
-                If Directory.Exists("C:\Facturas") Then
+                    Dim Fecha As String = DateTime.Now.ToShortDateString()
+                    If Directory.Exists("C:\Facturas") Then
 
-                    Using Factura As New StreamWriter("C:\Facturas\Facturas.txt", True)
-                        Factura.Write("----------------------------------------------------------------------" & vbNewLine & vbNewLine &
+                        Using Factura As New StreamWriter("C:\Facturas\Facturas.txt", True)
+                            Factura.Write("----------------------------------------------------------------------" & vbNewLine & vbNewLine &
+                                     "                   Datos de la Factura               " & vbNewLine & vbNewLine &
+                                     "Factura con IDPedido: " & IDPEDIDO & vbNewLine & vbNewLine &
+                                     "Fecha de Facturación: " & Fecha & vbNewLine & vbNewLine &
+                                     "                 Datos Del Cliente               " & vbNewLine & vbNewLine &
+                                     "Nombre del Cliente: " & NombreCliente & vbNewLine & vbNewLine &
+                                     "Direccion del Cliente: " & DireccionCliente & vbNewLine & vbNewLine &
+                                     "                    Datos del Trabajador                    " & vbNewLine & vbNewLine &
+                                     "Id del Trabajador: " & IDTRABAJADOR & vbNewLine & vbNewLine &
+                                     "Atendido por: " & NombreTrabajador & vbNewLine & vbNewLine &
+                                     "                          Datos del Pedido                    " & vbNewLine & vbNewLine &
+                                     "         IDPRODUCTO        " & "CANTIDAD       " & "PRECIO     " & "SERVICIO    " & "SUBTOTAL" & vbNewLine &
+                                     LINEACOMPLETA & vbNewLine & vbNewLine &
+                                     "Total A Pagar: " & TotalEuros & " Euros" & vbNewLine & vbNewLine)
+
+                            MsgBox("Factura Realizada Correctamente en: C:\Facturas\Facturas.txt")
+                        End Using
+
+                    Else
+                        My.Computer.FileSystem.CreateDirectory("C:\Facturas")
+                        Using Factura As New StreamWriter("C:\Facturas\Facturas.txt", True)
+                            Factura.Write("----------------------------------------------------------------------" & vbNewLine & vbNewLine &
                                  "                   Datos de la Factura               " & vbNewLine & vbNewLine &
                                  "Factura con IDPedido: " & IDPEDIDO & vbNewLine & vbNewLine &
                                  "Fecha de Facturación: " & Fecha & vbNewLine & vbNewLine &
@@ -535,33 +556,16 @@ Public Module ControladorDatos
                                  LINEACOMPLETA & vbNewLine & vbNewLine &
                                  "Total A Pagar: " & TotalEuros & " Euros" & vbNewLine & vbNewLine)
 
-                        MsgBox("Factura Realizada Correctamente en: C:\Facturas\Facturas.txt")
-                    End Using
+                            MsgBox("Factura Realizada Correctamente en: C:\Facturas\Facturas.txt")
+                        End Using
+                    End If
+                End Using
+            Catch ex As IOException
+                MsgBox("ERROR", MsgBoxStyle.Critical)
 
-                Else
-                    My.Computer.FileSystem.CreateDirectory("C:\Facturas")
-                    Using Factura As New StreamWriter("C:\Facturas\Facturas.txt", True)
-                        Factura.Write("----------------------------------------------------------------------" & vbNewLine & vbNewLine &
-                             "                   Datos de la Factura               " & vbNewLine & vbNewLine &
-                             "Factura con IDPedido: " & IDPEDIDO & vbNewLine & vbNewLine &
-                             "Fecha de Facturación: " & Fecha & vbNewLine & vbNewLine &
-                             "                 Datos Del Cliente               " & vbNewLine & vbNewLine &
-                             "Nombre del Cliente: " & NombreCliente & vbNewLine & vbNewLine &
-                             "Direccion del Cliente: " & DireccionCliente & vbNewLine & vbNewLine &
-                             "                    Datos del Trabajador                    " & vbNewLine & vbNewLine &
-                             "Id del Trabajador: " & IDTRABAJADOR & vbNewLine & vbNewLine &
-                             "Atendido por: " & NombreTrabajador & vbNewLine & vbNewLine &
-                             "                          Datos del Pedido                    " & vbNewLine & vbNewLine &
-                             "         IDPRODUCTO        " & "CANTIDAD       " & "PRECIO     " & "SERVICIO    " & "SUBTOTAL" & vbNewLine &
-                             LINEACOMPLETA & vbNewLine & vbNewLine &
-                             "Total A Pagar: " & TotalEuros & " Euros" & vbNewLine & vbNewLine)
-
-                        MsgBox("Factura Realizada Correctamente en: C:\Facturas\Facturas.txt")
-                    End Using
-                End If
-            End Using
-        Catch ex As IOException
-            MsgBox("ERROR", MsgBoxStyle.Exclamation)
+            End Try
+        Catch ex As System.IndexOutOfRangeException
+            MsgBox("Factura NO realizada", MsgBoxStyle.Critical)
         End Try
     End Sub
 End Module
