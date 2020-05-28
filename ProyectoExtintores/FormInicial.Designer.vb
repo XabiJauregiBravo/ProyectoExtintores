@@ -61,7 +61,7 @@ Partial Class FormInicial
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(39, 137)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(664, 171)
+        Me.Label2.Size = New System.Drawing.Size(666, 171)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = resources.GetString("Label2.Text")
         '
